@@ -1,0 +1,273 @@
+
+  body{
+    color: #000;
+    font-family:'RobotoI', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+ 
+    
+@font-face{
+    font-family:"RobotoI" ;
+    font-weight:900 ;
+    src: url("../fonts/Roboto-Italic.ttf");
+    
+}
+@font-face{
+    font-family: "RobotoR";
+    font-weight: 400;
+    src:url("../fonts/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: "RobotoL";
+    font-weight: 300;
+    src:url("../fonts/Roboto-Light.ttf");
+}    
+
+.list-menu{
+  border: none;
+  width:100px;
+  text-align: center;
+  text-decoration:none;
+  display: inline-flex;
+  font-size:17px;
+  color:#000;
+  font-weight: bold;
+  text-decoration:wavy;
+  cursor: pointer;
+  float: right;
+
+}
+.list-menu img{
+  width:16px;
+  height:16px ;  
+}
+.headline{
+  width:500px;
+  display:inline;
+  font-size:25px;
+}
+
+.part{
+  display:inline;
+  width: 400px;
+  float:inline-start;
+  padding:15px;
+}
+.fav-title{
+  font-size:20px;
+  font-family: "RobotoR";
+  font-weight: 400;
+  color: #ff5500;
+} 
+.favs{
+  font-size:20px;
+  font-weight:400;
+  font-family: "RobotoR";
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+.reviews-title{
+  font-size:18px;
+  font-family: "RobotoR";
+  font-weight: 400;
+  color: #ff5500;
+}
+.review-items{
+  font-size:20px;
+  font-weight:400;
+  font-family: "RobotoR";
+  text-decoration: none;
+  color: dodgerblue;
+
+}
+
+
+  aside{
+    width:300px;
+    display: inline-block;
+    vertical-align: top;
+    padding:25px;
+    
+  }
+  
+.page-title{
+  background:#ff5500;
+    border-radius:4px;          
+  }
+  .page-title h2{
+    color: #fff;
+    font-weight: 300;
+    font-family:RobotoL;
+
+  }
+  /* .hotel{ */
+    /* border:5px solid lightblue; */
+    /* max-width:87%;
+    border-width:5px;
+    padding:10px 5px;
+    margin-block:10px;
+    display:block;
+    position:relative;  */
+  /* } */
+  .brand{
+    font-family: "RobotoR";
+    font-weight:200;
+    font-size:x-large;
+    text-align:justify;
+    border-spacing: 1em 0.5em; 
+   
+  }
+  .area{
+    font-family: "RobotoR";
+    font-size: large;
+    font-weight: 100;
+    opacity:0.6;
+  }
+  #grid-container { 
+    width:100%;
+    display: flex;
+    padding-right:100%;
+    grid-template-columns: 25% 65%;
+    
+  }
+    /* display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    gap:85px; 
+   } */
+   #areaA {
+    background-color:gray;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding: 15px 15px 0px 15px; 
+    /* margin:8px 6px ; */
+    text-align: center;
+    width:260px;
+   
+
+    }
+   #areaB {
+    background-color:gainsboro;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding: 15px 15px 0px 15px;
+    margin:2px 10px;
+    /* margin: 2px 4px; */
+    text-align: center;
+    width:700px;
+  }  
+  .hotel-search button{
+    width:180px;
+    padding:8px 4px;
+    margin: 4px 2px;;
+    text-align: center;
+    text-decoration:none;
+    font-size:13px;
+    font-family:RobotoL;
+    color:white;
+    background-color:#ff5500 ;
+    border-radius:4px;
+    font-weight: bold;
+    text-decoration:wavy;
+    cursor: pointer;
+    float:right;
+  
+
+  }
+
+  .star {
+    color: #ccc;
+    display: inline-block;
+    font-size: 20px;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star.checked {
+    color: #ffcc00;
+  }
+
+  
+
+
+  section.hotel-list{
+    width:950px;
+    display: inline-block; 
+  }
+
+  img {
+    width: 300px;
+    height:250px;
+    float:left;
+}
+  article.hotel h1{
+    width:700px;
+    color: #000;
+    font-size:25px;
+    line-height:1px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: normal;   
+  }
+  article.hotel h2{
+    width:700px;
+    color: gray;
+    font-size: 15px;
+    line-height:1px;
+    text-transform: uppercase;
+    text-align: center;
+     
+  }
+  article.hotel p{
+    word-break: break-word;
+    width:950px;
+    color:#333;
+    text-align: center;
+    font-size: 16px;
+    line-height:20px;
+    text-align: justify;
+
+  }
+  
+
+/* .btn-room{
+  background-color:#ff5500;
+  border: none;
+  border: 2px solid;
+  border-radius:5px;
+  color: white;
+  width:180px;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display:block;
+  font-size: 13px;
+  margin: 10px 2px;
+  cursor: pointer;
+  float: right;} */
+
+  
+  footer {
+    position: relative;
+    bottom:-10px;
+    left:-10px;
+    right:-10px;
+    width: 100%;
+    background-color: lightgray; 
+    padding:10px; 
+    text-align: center; 
+    height: 2%;
+    /* margin-top: -10px;
+    margin-bottom: -10px; */
+    margin-right: -20px;
+    clear: both;
+}
+  
+
+ 

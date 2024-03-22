@@ -1,0 +1,327 @@
+
+body{
+  color: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  
+    /* font-family:'RobotoI', sans-serif;       */
+}
+main {
+  padding-bottom: 60px; /* Adjust the value as needed to provide space for the footer */
+}
+
+p,
+h1,
+h2,
+h2,
+h4,
+h5,
+h6{
+    font-family:"RobotoR"; 
+    
+}
+@font-face{
+    font-family:"RobotoI" ;
+    font-weight:900 ;
+    src: url("../fonts/Roboto-Italic.ttf");
+    
+}
+@font-face{
+    font-family: "RobotoR";
+    font-weight: 400;
+    src:url("../fonts/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: "RobotoL";
+    font-weight: 300;
+    src:url("../fonts/Roboto-Light.ttf");
+} 
+  
+.list-menu{
+    border: none;
+    width:100px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-flex;
+    font-size:17px;
+    color:#000;
+    font-weight: bold;
+    text-decoration:wavy;
+    cursor: pointer;
+    float: right;
+
+  }
+  .list-menu img{
+    width:16px;
+    height:16px ;  
+  }
+  
+ 
+
+.part{
+  display:inline;
+  width: 400px;
+  float:inline-start;
+  padding:15px;
+}
+
+
+select{
+  width:200px;
+  display: inline-block;
+  padding:5px;
+}
+.capacity,.rooms,.location{
+  background-color:lightgray;
+  width:200px;
+  border-radius: 4px;
+  }
+
+.slider {
+  width:197px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+/* .sliderValue,.sliderValue1{
+  width:92px;
+  padding: 5px;
+} */
+.slider-label{
+  font-size:14px;
+  font-style:normal;  
+}
+
+input[type="number"]{
+  background-color:#ff5500;
+  border: none;
+  color:white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  text-align: center;
+  display:inline-block;
+  width:64px;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+ 
+ }
+ 
+
+
+#datepicker-start,#datepicker-end{
+  width:163px;
+  padding: 5px 15px ;
+  border-radius:4px;
+  
+}
+
+.btnSearch button{
+  width:195px;
+  display: inline-block;
+  padding:5px;
+  border-radius: 4px;
+  background-color: dodgerblue;
+}
+.logo{
+  font-size:28px;
+  display: inline;
+}
+
+.hotel-search {
+  width:600px;
+  display:inline;
+  float: inline-start;
+  padding:25px;}
+
+ 
+
+.headline{
+  width:700px;
+  display: inline;
+  vertical-align: top;
+  padding:10px 0 55px 15px;
+  font-size: 16px;
+  color:#ff5500;
+  /* box-sizing: border-box;
+  box-shadow: 0 2px 4px 4px rgba(0,0,0,.11);
+  border-radius:5px;
+  padding:10px 0 55px 15px;
+  margin: 4px 2px; */
+}
+
+  .page-title{
+    background:#ff5500;
+    border-radius:4px;
+             
+  }
+  .page-title h2{
+    color: #fff;
+    font-weight: 300;
+    font-family:RobotoL;
+
+  }
+  .brand{
+    font-family: "RobotoR";
+    font-weight:200;
+    font-size:x-large;
+    text-align:justify;
+    border-spacing: 1em 0.5em; 
+   
+  }
+  .area{
+    font-family: "RobotoR";
+    font-size: large;
+    font-weight: 100;
+    opacity:0.6;
+  } 
+  
+  
+  #grid-container { 
+    width:100%;
+    display: flex;
+    padding-right:100%;
+    grid-template-columns: 25% 65%;
+    
+  }
+    /* display: flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    gap:85px; 
+   } */
+   #areaA {
+    background-color:gray;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding: 15px 15px 0px 15px; 
+    /* margin:8px 6px ; */
+    text-align: center;
+    width:260px;
+   
+
+    }
+   #areaB {
+    background-color:gainsboro;
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding: 15px 15px 0px 15px;
+    margin:2px 10px;
+    /* margin: 2px 4px; */
+    text-align: center;
+    width:600px;
+  }  
+
+  .hotel-search button{
+    width:180px;
+    padding:8px 4px;
+    margin: 4px 2px;;
+    text-align: center;
+    text-decoration:none;
+    font-size:13px;
+    font-family:RobotoL;
+    color:white;
+    background-color:#ff5500 ;
+    border-radius:4px;
+    font-weight: bold;
+    text-decoration:wavy;
+    cursor: pointer;
+    float:right;
+  
+
+  }    
+  
+  
+  section.hotel-list{
+    width:950px;
+    display: inline-block; 
+  }
+
+  img {
+    width: 300px;
+    height:250px;
+    float:left;
+}
+  article.hotel h1{
+    width:700px;
+    color: #000;
+    font-size:25px;
+    line-height:1px;
+    text-transform: uppercase;
+    text-align: center;
+    font-style: normal;   
+  }
+  article.hotel h2{
+    width:700px;
+    color: gray;
+    font-size: 15px;
+    line-height:1px;
+    text-transform: uppercase;
+    text-align: center;
+     
+  }
+  article.hotel p{
+    word-break: break-word;
+    width:950px;
+    color:#333;
+    text-align: center;
+    font-size: 16px;
+    line-height:20px;
+    text-align: justify;
+
+  }
+
+  /* footer {
+    position: relative;
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: lightgray; 
+    padding:2px;
+    text-align: center; 
+    clear: both;
+} */
+   /* body>footer{
+   background: #000;
+   border-top:3px solid #000 ;
+   color:#333;
+   display: block;
+    
+  
+  } */
+  body>footer {
+    position: fixed;
+    border-top: 3px solid #808080;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: lightgray; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+
+
+  body>header{
+    box-shadow: 0px 4px 1px 2px rgba(0,0,0,0.25);
+  }
+  
+   /* body>footer>p{
+    color: black;
+    line-height: 2;
+    margin: 0;
+    padding: 15px 10px;
+    text-align: center;
+  }   */
+
+
+
+  
+  

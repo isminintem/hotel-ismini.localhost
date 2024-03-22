@@ -1,0 +1,288 @@
+
+body{
+  color: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+    /* font-family:'RobotoI', sans-serif;       */
+}
+
+p,
+h1,
+h2,
+h2,
+h4,
+h5,
+h6{
+    font-family:"RobotoR"; 
+    
+}
+@font-face{
+    font-family:"RobotoI" ;
+    font-weight:900 ;
+    src: url("../fonts/Roboto-Italic.ttf");
+    
+}
+@font-face{
+    font-family: "RobotoR";
+    font-weight: 400;
+    src:url("../fonts/Roboto-Regular.ttf");
+}
+@font-face{
+    font-family: "RobotoL";
+    font-weight: 300;
+    src:url("../fonts/Roboto-Light.ttf");
+} 
+  
+
+
+
+.list-menu{
+    border: none;
+    width:100px;
+    text-align: center;
+    text-decoration:none;
+    display: inline-flex;
+    font-size:17px;
+    color:#000;
+    font-weight: bold;
+    text-decoration:wavy;
+    cursor: pointer;
+    float: right;
+}
+.list-menu img{
+  width:16px;
+  height:16px ; 
+ 
+}
+.headline{
+  width:500px;
+  display:inline;
+  font-size:25px;}
+
+.image-room img{
+  width:35%;
+  margin-right: 5px;
+} 
+.grid-container1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:20px;
+  background-color:dodgerblue;
+  width:85%;
+  border: 1px solid #ddd;
+
+}
+
+.grid-container{
+  display:grid;
+  grid-template-columns:auto; 
+  gap:20px;
+  background-color:dodgerblue;
+  width:85%;
+  align-items: center;
+  /* flex-wrap: wrap;
+  overflow-x: auto;
+  border-collapse: collapse; */
+  border: 1px solid #ddd;
+  }
+ 
+.details{
+  padding-right: 10px;
+  font-size: 17px;
+  /* display: flex; */
+  flex-grow: 1;
+  }
+
+.reviews{
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  /* margin-right:500px; */
+
+}
+.rating{
+  display: flex;
+  align-items: center;
+  flex-grow:3;
+ 
+}
+
+.price{
+  font-size: 17px;
+
+}
+.star {
+  color: #ccc;
+  display: inline-block;
+  font-size: 20px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.selected {
+  color: #ffcc00;
+}
+
+
+ /* hides the checkbox */
+input {
+  display: none;
+}
+
+/* changes the color when selected */
+input:checked ~ label {
+  color: red;
+}
+
+
+
+/* for styling purpose only */
+label {
+  font-size:2em;
+}
+
+ 
+  /* .vertical {
+    border-left:3px solid black;
+    height:5%;
+    position:absolute;
+    left:45%;
+    } */
+
+
+
+.image-room img{
+  width:30%;
+  margin-right: 5px;
+}
+.options img{
+   width: 18px;
+   text-align:justify;
+}
+
+.bookings{
+    border-radius:4px;
+    width:100px;
+    margin: 2px;
+    padding:10px 0px;
+    text-align: center;
+    text-decoration:none;
+    display:inline;
+    position: relative;
+    font-size:12px;
+    color:black;
+    background-color:#ff5500;;
+    font-weight: bold;
+    text-decoration:wavy;
+    cursor: pointer;
+    float: right;
+}
+
+
+.description{
+  display: flex;
+  width:85%;
+  color:#333;
+  text-align: left;
+  font-size: 16px;
+  line-height:20px;
+  white-space:pre-line;
+  
+}
+.links button{
+  top: 60px; 
+  right:10px; 
+  display:inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+ textarea {
+  width:30%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical; /* Allows vertical resizing of textarea */
+}
+
+.form-group_landing button {
+  padding: 5px 10px;
+  background-color:#ff5500;;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Optional: Style button on hover */
+.comment-box button:hover {
+  background-color: #0056b3;
+}
+
+
+
+footer {
+  position: relative;
+  bottom:-10px;
+  left:-10px;
+  right:-10px;
+  width: 100%;
+  background-color: lightgray; 
+  padding:20px; 
+  text-align: center; 
+  height: 2%;
+  /* margin-top: -10px;
+  margin-bottom: -10px; */
+  margin-right: -20px;
+  clear: both;
+}
+
+
+
+
+
+ 
+.ratingStars{
+  font-size: 10px;
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+  display: inline;
+}
+.ratingStars:not(:checked) > input {
+  position:absolute;
+  top:-9999px;
+}
+.ratingStars:not(:checked) > label {
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:20px;
+  color:#ccc;
+}
+.ratingStars:not(:checked) > label:before {
+  content: '★ ';
+}
+.ratingStars > input:checked ~ label {
+  color: #ffc700;    
+}
+.ratingStars:not(:checked) > label:hover,
+.ratingStars:not(:checked) > label:hover ~ label {
+  color: #deb217;  
+}
+.ratingStars > input:checked + label:hover,
+.ratingStars > input:checked + label:hover ~ label,
+.ratingStars > input:checked ~ label:hover,
+.ratingStars > input:checked ~ label:hover ~ label,
+.ratingStars > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+

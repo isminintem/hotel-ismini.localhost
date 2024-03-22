@@ -1,0 +1,139 @@
+/* body > header { */
+  /* box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.25); */
+ 
+/* } */
+
+  body > header .headline {
+      color: #000;
+      font-size:28px;     
+  }
+  body {
+    width: 100%;
+    position: fixed;
+  }
+
+a,
+a:active,
+a:visited,
+a:focus {
+  color: #ff5500;
+}
+a:hover {
+  color: #a20d01;
+}
+button,
+input[type="button"] {
+  background: #f50;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #ca4502;
+  cursor: pointer;
+}
+  button:hover,
+  input[type="button"]:hover {
+      background: #a20d01;
+  }
+  button a,
+  button a:hover,
+  button a:active,
+  button a:visited,
+  button a:focus {
+      color: #fff;
+  }
+
+
+.list-menu{
+  border: none;
+  width:100px;
+  text-align: center;
+  text-decoration:none;
+  display: inline;
+  font-size:18px;
+  color:#000;
+  font-weight: bold;
+  text-decoration:wavy;
+  cursor: pointer;
+  float: right;
+}
+.list-menu img{
+  width:17px;
+  height:17px ;
+
+ 
+}
+
+.location,.rooms{
+  width: 196px;
+  border: 1px solid black;
+}
+
+#datepicker-start{
+  width:190px;
+  margin:auto;
+  border: 1px solid black;
+}
+  
+
+  #datepicker-end{
+  width:190px;
+  margin:auto;
+  border: 1px solid black;
+}
+
+ .search-rooms{
+  background-color:bisque;
+  text-align:center;
+  text-decoration: none;
+  font-size:100%;
+  display:inline;
+  justify-content: center;
+  padding: 40px 0 ;
+  position:absolute;
+  top: 25%;
+  left:42%;
+  transform: translate(-25%,-42%);
+  margin: auto;
+  width:500px;
+  height:120px;
+  border: 3px solid navy;
+  border-radius: 4px;
+  line-height: 200%;  
+}
+
+
+
+.btn-search button{
+  width: 150px;
+  padding:10px 5px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  border-top: 3px solid #808080;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: lightgray; 
+  padding: 10px; 
+  text-align: center; 
+}
+ fieldset {
+  border:none;
+}
+label {
+  display: block;
+  margin: 30px 0 0 0;
+}
+.overflow {
+  height: 200px;
+}
+
+
+
