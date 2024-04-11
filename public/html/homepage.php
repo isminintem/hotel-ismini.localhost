@@ -23,7 +23,7 @@ require_once __DIR__.'/../../boot/boot.php';
         <script src="../js/jquery-3.7.1.js"></script>
         <script src="../js/jquery-ui-1.13.1.js"></script>   
     </head>
-    <body>
+    <body>     
         <header>
             <section class="access">
                 <form action="login_action.php" method="post">
@@ -44,11 +44,13 @@ require_once __DIR__.'/../../boot/boot.php';
                 color: #000;
                 background-image: url("../images/background img.jpg");
                 background-repeat: no-repeat;
+                /* background-attachment:relative; */
                 background-position: top;
                 background-size: cover; 
-                padding: 600px;
-                margin-left: -8px;
-                margin-top: -22px;
+                /* padding:300px; */
+                padding:170px;
+                margin-left:-8px;
+                margin-top:0;
                 }
                 </style>
             </section>

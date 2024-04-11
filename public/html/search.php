@@ -6,7 +6,9 @@ use \Services\UserService;
 use \data\Hotel\RoomDBA;
 use \model\Hotel\Room;
 use \data\Hotel\RoomTypeDBA;
-use \model\Hotel\RoomType; 
+use \model\Hotel\RoomType;
+use \data\Hotel\BookingDBA;
+use \model\Hotel\BookingRooms; 
 
 if(empty(UserService::getCurrentUser())) {
   header("Location: /public/html/homepage.php");
@@ -44,6 +46,9 @@ $count_of_guests=$roomDBA->getAllGuests();
 $cities = $roomDBA->getAllCities();
 $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, $selectedCheckinDate, $selectedCheckoutDate, $selectedGuests, $selectedPriceMin, $selectedPriceMax);
 
+$userid=UserService::getCurrentUser();
+$bookingDBA= new BookingDBA();
+$bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
 
 
 ?>
@@ -136,7 +141,7 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                                 echo "selected=true";
                             }                                
                             ?>
-                            value="<?php echo $city['city'] ?>"  ><?php echo $city['city'] ?></option>
+                            value="<?php echo $city['city'] ?>"><?php echo $city['city'] ?></option>
                             <?php
                             }
                             ?>
@@ -208,7 +213,13 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                        </div>   
                 <?php 
                     foreach($availableRooms as $availableRoom) {
+                   
                 ?>
+                 <?php 
+                    foreach($bookingsRooms as $bookingRoom)
+                    {
+                        
+                ?>   
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
                         <div class="brand"><?php echo $availableRoom->getName() ?> </div> 
@@ -217,47 +228,49 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                             <form action="results.php?room_id=<?php echo $availableRoom->getRoom_id() ?>&check-in-date=<?php echo $selectedCheckinDate->format("Y-m-d") ?>&check-out-date=<?php echo $selectedCheckoutDate->format("Y-m-d") ?>"  method="post">
                                 <button onclick="btn btn-warning">Go to the room</button> 
                             </form>
-                    </article>  
+                    </article> 
+                    
                         <div id="grid-container">
                             <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
                             <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Type of Room:<?php echo $availableRoom->getType_id()?></div>
-                        
+                            Type of Room:<?php echo $bookingRoom->getTitle()?></div>  
                       </div>
-                                
+               
+<!--                    
+                <?php
+                    }
+                ?> -->
+                
                          
                 <?php
                     }
                 ?>
-
+ 
                 <?php if($availableRooms->count()==0) { 
                  ?>
                         <h2>No rooms available</h2>
                 <?php
                     }
                 ?>
+                
+                
 
                     </section>
                 </aside>
-            
-    
-                
-          
-           
-      
               
             </main>
+                
     
      </div>
      <footer>
-        <p class="rights">(c) Copyright 2024</p>
+        <div class="footer-main">
+            <p class="rights">(c) Copyright 2024</p>
+        </div>
 
     </footer> 
  
    </body>
 
    
-
-
 
 </html>

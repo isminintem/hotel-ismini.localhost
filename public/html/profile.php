@@ -64,12 +64,12 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
                 if(count($userFavorites)>0) {
                        
                 ?>
-                <ol>
+                <ol class="list">
                     <?php
                         foreach($userFavorites as $userFavorite){
                     ?>            
                     <h3>
-                        <li>
+                        <li style=line-height:1;>
                             <h3>
                                 <a class="favs"href="results.php?room_id=<?php echo $userFavorite->getRoom_ID();?>"><?php echo $userFavorite->getRoomName(); ?> </a>
                                 <br><br><br>                     
@@ -89,12 +89,12 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
                   }
                 ?>
                 
-                <h4 class="reviews-title">REVIEWS</h4>
+                <h3 class="reviews-title">REVIEWS</h3>
 
             <?php
             if(count($userReviews)>0) {       
             ?>
-            <ol>
+            <ol class="list2">
                 <?php
                     foreach($userReviews as $userReview){
                 ?>           

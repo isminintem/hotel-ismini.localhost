@@ -3,8 +3,16 @@ body{
   color: #000;
   overflow-x: hidden;
   overflow-y: auto;
+
+
+
   
     /* font-family:'RobotoI', sans-serif;       */
+}
+main{
+  margin:5px 50px 15px 50px;
+  padding: 0,20px,0,20px;
+  height: auto;
 }
 
 p,
@@ -33,7 +41,34 @@ h6{
     font-weight: 300;
     src:url("../fonts/Roboto-Light.ttf");
 } 
-  
+a,
+a:active,
+a:visited,
+a:focus {
+  color: #ff5500;
+}
+a:hover {
+  color: #a20d01;
+}
+button,
+input[type="button"] {
+  background: #f50;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #ca4502;
+  cursor: pointer;
+}
+  button:hover,
+  input[type="button"]:hover {
+      background: #a20d01;
+  }
+  button a,
+  button a:hover,
+  button a:active,
+  button a:visited,
+  button a:focus {
+      color: #fff;
+  }
 
 
 
@@ -61,26 +96,27 @@ h6{
   font-size:25px;}
 
 .image-room img{
-  width:35%;
-  margin-right: 5px;
+  width:700px;
+  margin-right: 25px;
 } 
 .grid-container1{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap:20px;
-  background-color:dodgerblue;
-  width:85%;
+  /* gap:40px; */
+  background-color:#ff5500;
+  width:75%;
   border: 1px solid #ddd;
 
 }
+
 
 .grid-container{
   display:grid;
   grid-template-columns:auto; 
   gap:20px;
-  background-color:dodgerblue;
-  width:85%;
+  background-color:#ff5500;;
+  width:75%;
   align-items: center;
   /* flex-wrap: wrap;
   overflow-x: auto;
@@ -89,28 +125,47 @@ h6{
   }
  
 .details{
-  padding-right: 10px;
   font-size: 17px;
-  /* display: flex; */
-  flex-grow: 1;
+  /* justify-content:left; */
+  /* right: 0;
+  left:0; */
+  width: 900px;
+  white-space: nowrap; /* Prevent line breaks */
+
+
+
+
   }
 
 .reviews{
   font-size: 17px;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  /* margin-right:500px; */
+  margin-left: 10px;
+  /* margin:5px,10px,0px,10px; */
 
 }
-.rating{
+ 
+
+
+.title-reviews{
   display: flex;
   align-items: center;
-  flex-grow:3;
+  /* flex-grow:10; */
  
+}
+.favoriteHeart{
+  margin-right: 350px;
+
 }
 
 .price{
   font-size: 17px;
+  white-space: nowrap;
+  /* width:100% ; */
+  margin-left:-170px;
+  display: inline;
+ 
 
 }
 .star {
@@ -134,6 +189,7 @@ input {
 /* changes the color when selected */
 input:checked ~ label {
   color: red;
+  
 }
 
 
@@ -141,10 +197,11 @@ input:checked ~ label {
 /* for styling purpose only */
 label {
   font-size:2em;
+  
 }
 
- 
-  /* .vertical {
+/*  
+  .vertical {
     border-left:3px solid black;
     height:5%;
     position:absolute;
@@ -153,14 +210,56 @@ label {
 
 
 
-.image-room img{
-  width:30%;
-  margin-right: 5px;
-}
+
 .options img{
    width: 18px;
-   text-align:justify;
+   text-align:center;
 }
+.roomReviews{
+  font-size: 18px;
+  margin-top: 5px; /* Move the text 20 pixels down */
+  padding-left:10px; /* Move the text 30 pixels to the right */
+  position: relative; /* Set the positioning method */
+  top: -55px; 
+  left: 5px; /* Move the text 50 pixels to the right */
+}
+.description{
+  display: flex;
+  width:85%;
+  color:#333;
+  text-align: left;
+  font-size: 16px;
+  line-height:20px;
+  white-space:pre-line;
+  padding-left:10px;
+  top: -65px;
+  left: 5px;
+  position: relative; 
+  
+}
+.roomDetails {
+  height:65px; /* Set the height of the vertical line */
+  min-height: 50px;
+  width:3px; /* Set the width of the vertical line */
+  background-color: #ff5500 ; /* Set the color of the vertical line */
+  margin: 30px 10px 0 1px; /* Add some spacing to the top, left, and right of the vertical line */
+  border: none; /* Remove default border */
+  display: inline-block; /* Ensure the vertical line is displayed as an inline block */
+  vertical-align: middle; /* Align the vertical line vertically in the middle */
+  position: relative; /* Enable positioning */
+  top: 20px; /* Move the line down by 20 pixels */
+ 
+}
+
+.vertical-line {
+  height: 100%; /* Set the height of the vertical line */
+  width: 3px; /* Set the width of the vertical line */
+  background-color:#ff5500 ;/* Set the color of the vertical line */
+  margin: 0 10px; /* Add some spacing to the left and right of the vertical line */
+  display: inline-block; /* Ensure the vertical line is displayed as an inline block */
+}
+
+
 
 .bookings{
     border-radius:4px;
@@ -181,44 +280,49 @@ label {
 }
 
 
-.description{
-  display: flex;
-  width:85%;
-  color:#333;
-  text-align: left;
-  font-size: 16px;
-  line-height:20px;
-  white-space:pre-line;
-  
-}
+
 .links button{
-  top: 60px; 
-  right:10px; 
-  display:inline-block;
-  padding: 10px 20px;
+  width:170px;
+  top:800px; 
+  right:230px; 
+  padding: 10px 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius:3px;
   cursor: pointer;
+  position: absolute;
+  /* float: right; */
+
 }
 
  textarea {
-  width:30%;
-  padding: 5px;
+  width:20%;
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  position: relative;
+  top:-3px;
+  left: -120px;
+  right:0;
   resize: vertical; /* Allows vertical resizing of textarea */
 }
 
 .form-group_landing button {
+  width: 10%;
   padding: 5px 10px;
-  background-color:#ff5500;;
+  background-color:#007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  align-items: center;
+  margin-right: auto;
+
 }
+
+
+
 
 /* Optional: Style button on hover */
 .comment-box button:hover {
@@ -252,8 +356,10 @@ footer {
   font-size: 10px;
   float: left;
   height: 46px;
-  padding: 0 10px;
+  padding: 5px 10px;
   display: inline;
+  position: relative;
+  right:10px;
 }
 .ratingStars:not(:checked) > input {
   position:absolute;

@@ -84,7 +84,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <div class="grid-container1">
                     <div class="details"><?php echo $selectedRoom->getName()?>-<?php echo $selectedRoom->getCity()?>&nbsp;<?php echo $selectedRoom->getAddress()?>-<?php echo $selectedRoom->getArea()?> </div>
                     <div class="reviews">Reviews: </div>
-                    <div class="title-reviews">
+                    <span class="title-reviews">
                         <?php $roomAvgReview = $selectedRoom->getAvg_reviews();
                         for($i=1; $i <=5; $i++) {
                             if ($roomAvgReview >$i){
@@ -98,8 +98,8 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                             }
                         }
                         ?>
-                     </div>
-                     <div class="title-reviews"id="favorite">
+                     </span>
+                     <div class="favoriteHeart"id="favorite">
                      <form name="favoriteForm"class="favoriteForm" method="post" id="favoriteForm" action="../actions/addfavorite.php">
                         <input type="hidden"name="room_id"value="<?php echo $selectedRoomID; ?>">
                         <input type="hidden"name="is_favorite"value="<?php echo $favorite ? "1":"0";?>">
@@ -149,7 +149,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                    
                     
 
-                    <div class="price">Per Night:€<?php echo $selectedRoom->getPrice()?></div>
+                    <span class="price">Per Night:€<?php echo $selectedRoom->getPrice()?></span>
                             
                   
                 </div>
@@ -199,13 +199,13 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                             </tr>
                         </thead>    
                     </table>
-                </div>
-
+                </div><br>
+                <hr class="roomDetails">
                 <div class="caption">
-
                     <div class="roomReviews"><strong>Room Description </strong></div>
-                    <p><span class="description"><?php echo $selectedRoom->getDescription_long()?></span></p>
-                    <br>
+                    <div class="vertical-line"></div>
+                    <span class="description"><?php echo $selectedRoom->getDescription_long()?></span>
+
                 </div>
                 <div class=links>
                 <?php if($bookings->count()==0){
@@ -216,9 +216,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                                 <input type="hidden" name="check_in_date"value="<?php echo $selectedCheckinDate->format(DateTime::ATOM);?>">
                                 <input type="hidden" name="check_out_date"value="<?php echo $selectedCheckoutDate->format(DateTime::ATOM);?>">
                                 <button class="btn btn-brick"type="submit">Book Now</button>
-
                             </form>
-
                 <?php
                             }else{
                                 $notice = "Sorry!!The room is no longer available!"; 
@@ -232,11 +230,11 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 ?> 
                 </div>
 
-                <br>        
+                <br><br><br>        
                              
                 <iframe class="googleMaps"
                 src="//maps.google.com/maps?q=<?php  echo $selectedRoom->getLocation_lat() ?>,<?php  echo $selectedRoom->getLocation_long() ?>&z=15&output=embed"
-                width="1275"
+                width="1080"
                 height="450"
                 style="border:0;"
                 allowfullscreen=""
@@ -245,9 +243,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 </iframe><br>
 
         
-                <h4 class="reviews">Reviews</h4>
-                
-                
+                <h4 class="reviews">Reviews</h4>    
                 <?php
                 $counter=1;
                 foreach($reviewsOfRoom as $review) {                        
@@ -279,6 +275,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                     $counter=$counter+1;
                     }
                 ?>
+               
                       
                       
             <div class="caption caption room">
@@ -290,8 +287,6 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                     <?php } ?> -->
                 <!-- </div> -->
                
-
-
                 <form name="reviewForm"method="post"action="../actions/addReview.php">
                 <input type="hidden"name="room_id"value="<?php echo $selectedRoomID?>">
                         <div class="ratingStars">
@@ -307,7 +302,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                             <label class="full"for="star1"title="Very Bad-1 stars">&#9733;</label>
                             
                         </div>
-                        <br>
+                        <br><br>
                         
                     <div class="floating-label-form-group-controls">
                         <textarea name="comment"id="reviewField"class="form-control_landing review-textarea"
