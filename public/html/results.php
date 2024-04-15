@@ -108,13 +108,13 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                         
                     
                         
-                        <!--
-                        <div class="search_stars">
+                        
+                        <!-- <div class="search_stars">
                             <span class="fav-star">
                                 <span class="star<?php echo $favorite ? 'selected':'';?>"id="fav">🤍</span>
                             </span>
-                        </div>
-                        -->
+                        </div> -->
+                       
                     </form>
                     </div>
                     <script>
@@ -203,7 +203,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <hr class="roomDetails">
                 <div class="caption">
                     <div class="roomReviews"><strong>Room Description </strong></div>
-                    <div class="vertical-line"></div>
+                    <div class="vertical-lineRoom"></div>
                     <span class="description"><?php echo $selectedRoom->getDescription_long()?></span>
 
                 </div>
@@ -242,7 +242,9 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 referrerpolicy="no-referrer-when-downgrade">
                 </iframe><br>
 
-        
+                <hr class="lineReview">
+                <div class="totalReviews">
+               
                 <h4 class="reviews">Reviews</h4>    
                 <?php
                 $counter=1;
@@ -275,7 +277,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                     $counter=$counter+1;
                     }
                 ?>
-               
+               </div>
                       
                       
             <div class="caption caption room">
@@ -287,7 +289,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                     <?php } ?> -->
                 <!-- </div> -->
                
-                <form name="reviewForm"method="post"action="../actions/addReview.php">
+                <form name="reviewForm" class="reviewForm"method="post"action="../actions/addReview.php">
                 <input type="hidden"name="room_id"value="<?php echo $selectedRoomID?>">
                         <div class="ratingStars">
                             <input type="radio" id ="star5"name="rate"rate="5" value="5">
@@ -315,7 +317,58 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                     </div>
                 </form>
                    </div>
-            </div>          
+            </div> 
+                  <script>
+                window.addEventListener('load', function() {
+                    function updateVerticalLinePosition() {
+                        var totalReviewsElement = document.querySelector('.totalReviews');
+                        var lineReviewElement = document.querySelector('.lineReview');
+                        
+                        // Get the position of the totalReviews element relative to the viewport
+                        var totalReviewsPosition = totalReviewsElement.getBoundingClientRect().top;
+                        
+                        // Set the top position of the vertical line relative to the totalReviews element
+                        lineReviewElement.style.top = (totalReviewsPosition - 10) + 'px'; // Adjust as needed
+                    }
+
+                    // Call the function initially and whenever content changes
+                    updateVerticalLinePosition();
+                    
+                    // You can also call updateVerticalLinePosition() when content changes to dynamically adjust the position of the line.
+                    });
+                    // Function to add new data
+                            function addNewData() {
+                            // Simulate adding new data (for demonstration purposes)
+                            var newData = document.createElement('div');
+                            newData.textContent = 'New Data';
+                            document.querySelector('.container').appendChild(newData);
+                            
+                            // After adding new data, update the position of the line
+                            updateLinePosition();
+                            }
+
+                            // Function to delete data
+                            function deleteData() {
+                            // Simulate deleting data (for demonstration purposes)
+                            var container = document.querySelector('.container');
+                            if (container.lastElementChild) {
+                                container.removeChild(container.lastElementChild);
+                                
+                                // After deleting data, update the position of the line
+                                updateLinePosition();
+                            }
+                            }
+
+                            // Add event listener to the button to trigger adding new data
+                            document.getElementById('addDataBtn').addEventListener('click', addNewData);
+
+                            // Add event listener to the button to trigger deleting data
+                            document.getElementById('deleteDataBtn').addEventListener('click', deleteData);
+
+                            // Call the function initially to set the initial position of the line
+                            updateLinePosition();
+  
+                  </script>
 
 
 
@@ -326,6 +379,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <script src="../js/jquery-3.7.1.js"></script>
                 <script src="../js/jquery-3.7.1.min.js"></script>
                 <script src="../js/jquery-ui-1.13.1.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                 <script src="../pages/room_Favorite.js"></script>     
             </main>
 

@@ -11,6 +11,10 @@ use \data\Hotel\FavoriteDBA;
 
 
 
+// $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+// echo json_encode($arr);
+
+
 
 
 if(empty(UserService::getCurrentUser())) {
@@ -52,9 +56,9 @@ if(!$isFavorite){
 
 
 //Return operation status
-return json_encode([
-    'status'=> $status,
-    'is_favorite'=>!$isFavorite
+echo json_encode([
+    'status' => $status,
+    'is_favorite' =>!$isFavorite
 
 ]);
 

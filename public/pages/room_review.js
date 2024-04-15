@@ -1,6 +1,6 @@
 (function($){
   
-    $(document).on('submit','form.favoriteForm', function(e){
+    $(document).on('submit','form.reviewForm', function(e){
         //Stop default form behavior
         e.preventDefault();
         //Get form data
@@ -27,4 +27,3 @@
  
     });
 })(jQuery);
-

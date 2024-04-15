@@ -94,7 +94,7 @@ $bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
             <main>
                 <aside class="part">
                 <form name ="searchForm"class="searchForm" action="search.php" >
-                <!-- <div class="headline"> -->
+               
                     <p class="headline">FIND THE PERFECT<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOTEL</p><br><br>
            
                 <section class="hero">
@@ -204,6 +204,7 @@ $bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
                     });          
             </script>
                 </aside>
+                <!-- <div class="vertical-line left"></div>  -->
 
                 <aside class="hotel-search box">
                     <section class="hotel-list box" id="searchResults">
@@ -219,7 +220,8 @@ $bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
                     foreach($bookingsRooms as $bookingRoom)
                     {
                         
-                ?>   
+                ?>  
+                
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
                         <div class="brand"><?php echo $availableRoom->getName() ?> </div> 

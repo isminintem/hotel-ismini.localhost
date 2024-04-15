@@ -101,7 +101,7 @@ input[type="button"] {
 } 
 .grid-container1{
   display: flex;
-  justify-content: space-between;
+  justify-content:baseline;
   align-items: center;
   /* gap:40px; */
   background-color:#ff5500;
@@ -214,6 +214,7 @@ label {
 .options img{
    width: 18px;
    text-align:center;
+  
 }
 .roomReviews{
   font-size: 18px;
@@ -225,7 +226,7 @@ label {
 }
 .description{
   display: flex;
-  width:85%;
+  width:75%;
   color:#333;
   text-align: left;
   font-size: 16px;
@@ -239,7 +240,7 @@ label {
 }
 .roomDetails {
   height:65px; /* Set the height of the vertical line */
-  min-height: 50px;
+  min-height: 60px;
   width:3px; /* Set the width of the vertical line */
   background-color: #ff5500 ; /* Set the color of the vertical line */
   margin: 30px 10px 0 1px; /* Add some spacing to the top, left, and right of the vertical line */
@@ -250,13 +251,29 @@ label {
   top: 20px; /* Move the line down by 20 pixels */
  
 }
+.lineReview{
+  position: absolute; /* Set to absolute positioning */
+  top:50%; /* Align with top of container */
+  left:3.5%; /* Adjust the left position as needed */
+  width:3px; /* Set the width of the vertical line */
+  height:50%;
+  background-color: #ff5500; /* Set the color of the line */
+  transform: translateX(-40%)translateY(-12%); /* Center the line horizontally */
+  /* margin: 10px 4px;  */
+}
+  
 
-.vertical-line {
-  height: 100%; /* Set the height of the vertical line */
-  width: 3px; /* Set the width of the vertical line */
-  background-color:#ff5500 ;/* Set the color of the vertical line */
-  margin: 0 10px; /* Add some spacing to the left and right of the vertical line */
-  display: inline-block; /* Ensure the vertical line is displayed as an inline block */
+.totalReviews{
+  top:-1px;
+  position: relative;
+  height: auto;
+}
+
+.vertical-lineRoom {
+  height: 100%; 
+  width: 3px; 
+  background-color:#ff5500 ; 
+  display: inline-block;
 }
 
 
@@ -283,8 +300,8 @@ label {
 
 .links button{
   width:170px;
-  top:800px; 
-  right:230px; 
+  top:850px; 
+  right:400px; 
   padding: 10px 10px;
   background-color: #007bff;
   color: #fff;
@@ -317,7 +334,7 @@ label {
   border-radius: 3px;
   cursor: pointer;
   align-items: center;
-  margin-right: auto;
+  margin-right: 20px;
 
 }
 
