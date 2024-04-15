@@ -11,10 +11,6 @@ use \data\Hotel\FavoriteDBA;
 
 
 
-// $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
-// echo json_encode($arr);
-
-
 
 
 if(empty(UserService::getCurrentUser())) {
@@ -25,7 +21,7 @@ $userId=UserService::getCurrentUser();
 
 // return to homePage if it is not a POST invocation.I can not have redirect when i have an ajax request
 if(strtolower($_SERVER['REQUEST_METHOD'])!='post'){
-    echo "This a post script"; 
+    echo "This is a post script"; 
     die;
 }
 

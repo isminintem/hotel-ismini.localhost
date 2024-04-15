@@ -25,6 +25,8 @@ if(strtolower($_SERVER['REQUEST_METHOD'])!='post'){
 }
 
 
+
+
 // check if room_id is given
 $roomId=$_REQUEST['room_id'];
 if(empty($roomId)){
@@ -57,7 +59,8 @@ $reviewDBA=new ReviewDBA();
 $reviewDBA->addReview($roomId,$userId,$rate,$comment);
 
 //Return to room Page
-
+// header('Location: /public/html/results.php');
+// return;
 
 
 

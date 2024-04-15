@@ -245,38 +245,40 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <hr class="lineReview">
                 <div class="totalReviews">
                
-                <h4 class="reviews">Reviews</h4>    
+                <h4 class="reviews">Reviews</h4>
+                <div id="room-reviews-container">   
                 <?php
                 $counter=1;
-                foreach($reviewsOfRoom as $review) {                        
-                ?>
-                
-                    <span><?php echo $counter?>.&nbsp;</span> 
-                        <?php echo $review->getUserName()?>&nbsp;&nbsp; 
-                        <?php $rate = $review->getRate();
-                        for($i=1; $i <=5; $i++) {
-                            if ($rate >= $i){
-                                 ?>
-                                 <div class="star selected" data-rating="">&#9733;</div>
-                                 <?php
-                            }else{
-                                ?>
-                                <div class="star" data-rating="">&#9733;</div>
-                                <?php      
-                            }
-                        }
-                        ?><br>&nbsp;&nbsp;&nbsp;&nbsp;
-                        Comment:&nbsp;<?php echo htmlentities($review->getComment())?><br>&nbsp;&nbsp;&nbsp;&nbsp;
-                        Created at:&nbsp;<?php echo $review->getCreated_Time()?><br>
+                    foreach($reviewsOfRoom as $review) {                        
+                    ?>
                     
-
+                        <span><?php echo $counter?>.&nbsp;</span> 
+                            <?php echo $review->getUserName()?>&nbsp;&nbsp; 
+                            <?php $rate = $review->getRate();
+                            for($i=1; $i <=5; $i++) {
+                                if ($rate >= $i){
+                                    ?>
+                                    <div class="star selected" data-rating="">&#9733;</div>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <div class="star" data-rating="">&#9733;</div>
+                                    <?php      
+                                }
+                            }
+                            ?><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            Comment:&nbsp;<?php echo htmlentities($review->getComment())?><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                            Created at:&nbsp;<?php echo $review->getCreated_Time()?><br>
                         
-                  
-                  
-                <?php
-                    $counter=$counter+1;
-                    }
+
+                            
+                    
+                    
+                    <?php
+                        $counter=$counter+1;
+                        }
                 ?>
+                </div>
                </div>
                       
                       
@@ -380,7 +382,9 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <script src="../js/jquery-3.7.1.min.js"></script>
                 <script src="../js/jquery-ui-1.13.1.js"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-                <script src="../pages/room_Favorite.js"></script>     
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+                <script src="../pages/room_Favorite.js"></script>    
+                <script src="../pages/room_review.js"></script>    
             </main>
 
             
