@@ -242,7 +242,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 referrerpolicy="no-referrer-when-downgrade">
                 </iframe><br>
 
-                <hr class="lineReview">
+                <!-- <hr class="lineReview"> -->
                 <div class="totalReviews">
                
                 <h4 class="reviews">Reviews</h4>

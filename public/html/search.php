@@ -46,9 +46,8 @@ $count_of_guests=$roomDBA->getAllGuests();
 $cities = $roomDBA->getAllCities();
 $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, $selectedCheckinDate, $selectedCheckoutDate, $selectedGuests, $selectedPriceMin, $selectedPriceMax);
 
-$userid=UserService::getCurrentUser();
-$bookingDBA= new BookingDBA();
-$bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
+$roomTypeDBA = new RoomTypeDBA();
+$roomTypes = $roomTypeDBA->getAllRoomTypes();
 
 
 ?>
@@ -216,11 +215,7 @@ $bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
                     foreach($availableRooms as $availableRoom) {
                    
                 ?>
-                 <?php 
-                    foreach($bookingsRooms as $bookingRoom)
-                    {
-                        
-                ?>  
+   
                 
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
@@ -235,13 +230,18 @@ $bookingsRooms=$bookingDBA->getBookingsByUserID($userid);
                         <div id="grid-container">
                             <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
                             <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Type of Room:<?php echo $bookingRoom->getTitle()?></div>  
+                            Type of Room:
+                            <?php 
+                                foreach($roomTypes as $roomType) {
+                                    if($roomType->getType_id()==$availableRoom->getType_id()) {
+                                        echo $roomType->getTitle();
+                                        break;
+                                    }       
+                                } ?>
+                        </div>  
                       </div>
                
-<!--                    
-                <?php
-                    }
-                ?> -->
+
                 
                          
                 <?php

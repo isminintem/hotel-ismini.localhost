@@ -54,13 +54,15 @@ input[type="button"] {
   text-decoration:wavy;
   cursor: pointer;
   float: right;
+
 }
 .list-menu img{
   width:17px;
   height:17px ;
+  /* margin-left: -25px;  */
 
- 
 }
+
 
 .location,.rooms{
   width: 196px;
@@ -135,5 +137,31 @@ label {
   height: 200px;
 }
 
+
+.dropdown {
+  position: relative;
+  display: inline;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width:100px;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 2px 12px;
+  z-index: 1;
+  right: 0; 
+  top: 100%;
+  left:0;
+  /* transition:none; */
+}
+
+.dropdown:hover .dropdown-content {
+  display: inline;
+  top: calc(100% + 10px); }/* Αναδιάταξη του περιεχομένου κατά 10px χαμηλότερα από το "Profile" */
+/* Κρυφό περιεχόμενο dropdown αρχικά
 
 

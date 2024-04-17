@@ -27,31 +27,50 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
         <meta charset="utf-8">
         <meta name="viewport"content="width=device-width,initial-scale 1.0">
         <title>Hotels.com</title>
-        <link rel="stylesheet" type="text/css"href="../css/css/styles.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/css/styles.css"/>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-        <script src="../js/index.js"></script>
-        <script src="../js/jquery-3.7.1.js"></script>
-        <script src="../js/jquery-3.7.1.min.js"></script>
-        <script src="../js/jquery-ui-1.13.1.js"></script>   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="../js/dropdown-links.js"></script> 
+        <!-- <script src="../js/index.js"></script>  -->
+
+        
     </head>
     <body>
         <header> 
-            <section class="access">
+        <section class="access">
                 <form action="index.php"method="post">
                     <a class="list-menu" href="index.php"target><img src="../images/Home.png">Home</a>
                     
                 </form>
                 
-                <!-- <form action="../actions/logout_action.php" method="post">
-                <a class="list-menu" href="../actions/logout_action.php"target>LogOut</a>
-                </form> -->
-           </section>    
+           </section> 
+
             <section class="access">
+                <div class="dropdown">
+                    <a class="list-menu" href="profile.php" id="profile-link" target><img src="../images/user.png">Profile</a>
+                    <div class="dropdown-content">
+                        <a class="list-menu" href="../actions/logout_action.php"id="logout-link" target>Logοut</a>
+                    </div>
+                </div>
+            </section>
+        <!-- <section class="access">
                 <form action="profile.php"method="post">
-                    <a class="list-menu"href="profile.php"id="profile-link"target><img src="../images/user.png">Profile</a>
+                     <div class="dropdown">
+                        <a class="list-menu"href="profile.php"id="profile-link"target><img src="../images/user.png">Profile</a>
+                 <form action="../actions/logout_action.php" method="post"> 
+                    <div class="dropdown-content">
+                        <a class="list-menu"href="../actions/logout_action.php"target>Logοut</a>
+                    </div>
+                </form>
+                    </div>
+                    
                 </form>
                    
-            </section>
+         </section>
+          -->
+            
+           
             <h3 class="headline">Hotels.com</h3>
             <section class="hero">
                 <style> main {
@@ -120,7 +139,6 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                 </div>
                 <script type="text/javascript">
                     $(function(){
-                        console.log("Document ready function called."); // Check if this message appears in the console
                         $("#datepicker-start").datepicker({
                             dateFormat:"yy-mm-dd"
                             // minDate: 0
@@ -135,8 +153,10 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                     
                 </script>
                 
-                <script src="../js/index.js"></script>  
+                
             </section>
+            
+         
             
         </main>
         <footer>

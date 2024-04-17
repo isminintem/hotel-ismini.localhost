@@ -5,17 +5,9 @@
         e.preventDefault();
         //Get form data
         const formData = $(this).serialize();
-
-     // Check if comment and rating are provided
-        const comment = $(this).find('textarea[name="comment"]').val();
-        const rating = $(this).find('input[name="rating"]').val();
         
-        if(comment.trim() === '' || rating.trim() === '') {
-            alert('Please provide both a comment and a rating.');
-            return; // Stop execution if comment or rating is missing
-        }
         
-        // console.log(formData);
+        console.log(formData);
 
 
 

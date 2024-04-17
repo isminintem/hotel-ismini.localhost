@@ -47,48 +47,58 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
 ?>
 
 
-<aside class="hotel-search box">
-    <section class="hotel-list box" id="searchResults">
+        <aside class="hotel-search box">
+                    <section class="hotel-list box" id="searchResults">
 
-        <div class="page-title">
-                <h2>Search Results </h2>
-        </div>
-
-        <?php 
-            foreach($availableRooms as $availableRoom) {
-        ?>
-
-            <article class="hotel">
-                <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
-                <div class="brand"><?php echo $availableRoom->getName() ?> </div> 
-                    <div class="area"><?php echo $availableRoom->getCity()?>,<?php echo $availableRoom->getArea()?></div>
-                    <p><span class="roomdetails"><?php echo $availableRoom->getDescription_short()?></span></p>
-                    <form action="results.php?room_id=<?php echo $availableRoom->getRoom_id() ?>&check-in-date=<?php echo $selectedCheckinDate->format("Y-m-d") ?>&check-out-date=<?php echo $selectedCheckoutDate->format("Y-m-d") ?>"  method="post">
-                        <button onclick="btn btn-warning">Go to the room</button> 
-                    </form>
-            </article> 
-
-            <div id="grid-container">
-                <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
-                <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                Type of Room:<?php echo $availableRoom->getType_id()?></div>
-            
-            </div>
-                
-            
-            <?php
-                }
-            ?>
-
-            <?php if($availableRooms->count()==0) { 
+                        <div class="page-title">
+                             <h2>Search Results</h2>
+                       </div>   
+                <?php 
+                    foreach($availableRooms as $availableRoom) {
+                   
                 ?>
-                    <h2>No rooms available</h2>
-            <?php
-                }
-            ?>
+                 <?php 
+                    foreach($bookingsRooms as $bookingRoom)
+                    {
+                        
+                ?>  
+                
+                    <article class="hotel">
+                        <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
+                        <div class="brand"><?php echo $availableRoom->getName() ?> </div> 
+                            <div class="area"><?php echo $availableRoom->getCity()?>,<?php echo $availableRoom->getArea()?></div>
+                            <p><span class="roomdetails"><?php echo $availableRoom->getDescription_short()?></span></p>
+                            <form action="results.php?room_id=<?php echo $availableRoom->getRoom_id() ?>&check-in-date=<?php echo $selectedCheckinDate->format("Y-m-d") ?>&check-out-date=<?php echo $selectedCheckoutDate->format("Y-m-d") ?>"  method="post">
+                                <button onclick="btn btn-warning">Go to the room</button> 
+                            </form>
+                    </article> 
+                    
+                        <div id="grid-container">
+                            <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
+                            <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Type of Room:<?php echo $bookingRoom->getTitle()?></div>  
+                      </div>
+               
+<!--                    
+                <?php
+                    }
+                ?> -->
+                
+                         
+                <?php
+                    }
+                ?>
+ 
+                <?php if($availableRooms->count()==0) { 
+                 ?>
+                        <h2>No rooms available</h2>
+                <?php
+                    }
+                ?>
+                
+                
 
-    </section>
-</aside>
-
+                    </section>
+                </aside>
  
             
