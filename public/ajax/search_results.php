@@ -57,11 +57,11 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                     foreach($availableRooms as $availableRoom) {
                    
                 ?>
-                 <?php 
+                 <!-- <?php 
                     foreach($bookingsRooms as $bookingRoom)
                     {
                         
-                ?>  
+                ?>   -->
                 
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>

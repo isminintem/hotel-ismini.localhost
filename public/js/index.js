@@ -60,7 +60,12 @@ document.getElementById("datepicker-end").addEventListener("change", function() 
       alert("Please select a check-out date that is not in the past.");
       document.getElementById("datepicker-end").value = ""; // Clear the invalid date
   }
+
+ 
+
 });
+
+
 
 
 

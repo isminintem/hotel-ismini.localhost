@@ -54,21 +54,7 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                     </div>
                 </div>
             </section>
-        <!-- <section class="access">
-                <form action="profile.php"method="post">
-                     <div class="dropdown">
-                        <a class="list-menu"href="profile.php"id="profile-link"target><img src="../images/user.png">Profile</a>
-                 <form action="../actions/logout_action.php" method="post"> 
-                    <div class="dropdown-content">
-                        <a class="list-menu"href="../actions/logout_action.php"target>Logοut</a>
-                    </div>
-                </form>
-                    </div>
-                    
-                </form>
-                   
-         </section>
-          -->
+  
             
            
             <h3 class="headline">Hotels.com</h3>
@@ -121,14 +107,13 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                                    
                      
                     <div class="duration">
-                        <input type="text" class="form-control_landing"  id="datepicker-start" value=""  name="check-in-date"  placeholder="Check-in-Date">
-                        <input type="text" class="form-control_landing"  id="datepicker-end"   value=""  name="check-out-date" placeholder="Check-out-Date"><br><br>
+                        <input type="text" class="form-control_landing"  id="datepicker-start"autocomplete="off" value=""  name="check-in-date"  placeholder="Check-in-Date">
+                        <input type="text" class="form-control_landing"  id="datepicker-end" autocomplete="off"  value=""  name="check-out-date" placeholder="Check-out-Date"><br><br>
                        
                             <p type="text" id="check-in-date error"class="text-danger"></p>
                             <p type="text"id="check-in-date error"class="text-danger"></p>  
                     </div>
                   
-                    
                         <div class="btn-search">
                             <button class="search"id="btn-sub">Search</button>
                         </div>
@@ -138,16 +123,17 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                      
                 </div>
                 <script type="text/javascript">
-                    $(function(){
+                   $(document).ready(function() {
+                        // Initialize the datepickers
                         $("#datepicker-start").datepicker({
-                            dateFormat:"yy-mm-dd"
-                            // minDate: 0
+                            dateFormat: "yy-mm-dd",
+                            minDate:0
                         });
-                    });
-                    $(function(){
+
                         $("#datepicker-end").datepicker({
-                            dateFormat:"yy-mm-dd"
-                            // minDate: 0 
+                            dateFormat: "yy-mm-dd",
+                            minDate:0
+                          
                         });
                     });
                     
@@ -167,4 +153,3 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
 
    
 </html>
- 

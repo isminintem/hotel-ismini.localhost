@@ -46,7 +46,7 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
         <header>
             <section class="access">
                 <form action="homepage.html" method="get">
-                    <a class="list-menu"href="homepage.html"target><img src="../images/Home.png">Home</a>
+                    <a class="list-menu"href="index.php"target><img src="../images/Home.png">Home</a>
                 </form>
                 <form action="profile.php"method="get">
                     <a class="list-menu"href="profile.php"target><img src="../images/user.png">Profile</a>

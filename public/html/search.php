@@ -70,6 +70,10 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
             <script src="../js/jquery-ui-1.13.1.js"></script>
             <script src="../js/search.js"></script>
             <script src="../pages/search.js"></script>
+            <script src="../js/dropdown-links.js"></script> 
+            
+
+  
     </head>
    
    
@@ -77,15 +81,24 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
         <div class="wrapper">
 
             <header>
-                <section class="access">
-                    <form action="homepage.html" method="get">
-                        <a class="list-menu"href="homepage.php"target><img src="../images/Home.png">Home</a>    
-                    </form>
-                    <form action=""method="get">
-                        <a class="list-menu"href="profile.php"target><img src="../images/user.png">Profile </a>
-                    </form>             
-                </section>
-                <h2 class="logo">Hotels.com</h2>     
+            <section class="access">
+                <div class="dropdown">
+                    <a class="list-menu" href="profile.php" id="profile-link" target><img src="../images/user.png">Profile</a>
+                    <div class="dropdown-content">
+                        <a class="list-menu" href="../actions/logout_action.php"id="logout-link" target>Logοut</a>
+                    </div>
+                </div>
+            </section>
+            <section class="access">
+                <form action="index.php"method="post">
+                    <a class="list-menu" href="index.php"target><img src="../images/Home.png">Home</a>
+                    
+                </form>
+                
+           </section> 
+
+            
+                <h3 class="logo">Hotels.com</h3>     
                 <hr class="hr-with-shadow">
             </header><br><br>
 
@@ -264,12 +277,12 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
                 
     
      </div>
-     <footer>
-        <div class="footer-main">
+ 
+     <!-- <footer class="bg-light fixed-bottom text-center">
             <p class="rights">(c) Copyright 2024</p>
         </div>
 
-    </footer> 
+    </footer>  -->
  
    </body>
 

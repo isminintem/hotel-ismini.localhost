@@ -151,17 +151,21 @@ label {
   min-width:100px;
   box-shadow: none;
   border-radius: 0;
-  padding: 2px 12px;
+  padding: 5px 2px;
   z-index: 1;
-  right: 0; 
+  right:30px; 
   top: 100%;
-  left:0;
-  /* transition:none; */
-}
+  left:10px;
+  transition:opacity 0.8s ease;
+
+  /* top: calc(100% + 10px); */
+ }
+
+  
+
 
 .dropdown:hover .dropdown-content {
-  display: inline;
-  top: calc(100% + 10px); }/* Αναδιάταξη του περιεχομένου κατά 10px χαμηλότερα από το "Profile" */
-/* Κρυφό περιεχόμενο dropdown αρχικά
+  display: block;
 
+}
 

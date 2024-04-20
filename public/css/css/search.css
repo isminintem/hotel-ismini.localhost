@@ -1,13 +1,21 @@
 
 
- body{
+
+ 
+  body{
   color: #000;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
-  /* margin: 0;
-  padding-bottom:0; */
-} 
+  height: 100%;
+  /* margin-bottom:-60px;  */
+  position: relative; /* Καθορίζει τη θέση του footer */
+
+}
+
+
+  
+
 
   
     /* font-family:'RobotoI', sans-serif;       */
@@ -77,7 +85,7 @@ input[type="button"] {
     text-align: center;
     text-decoration:none;
     display: inline-flex;
-    font-size:17px;
+    font-size:18px;
     color:#000;
     font-weight: bold;
     text-decoration:wavy;
@@ -86,11 +94,22 @@ input[type="button"] {
 
   }
   .list-menu img{
-    width:16px;
-    height:16px ;  
+    width:17px;
+    height:17px ;  
   }
   
-  
+  .hr-with-shadow {
+    border: none;
+    height:1px; /* Ύψος της γραμμής */
+    width:100%;
+    background-color: transparent; /* Διαφανής χρώμα φόντου */
+    left:-10px;
+    box-shadow: 
+    0px 2px 4px rgba(0, 0, 0, 0.9), 
+    -5px 0px 5px -5px rgba(0, 0, 0, 0.9), /* Σκιάσματα προς τα αριστερά */
+    -5px 0px 5px -5px rgba(0, 0, 0, 0.9); /*Σκιάσματα προς τα δεξιά */
+  }
+
 
 .part{
   display:inline;
@@ -206,14 +225,27 @@ input[type="number"]{
     font-weight:200;
     font-size:x-large;
     text-align:justify;
-    border-spacing: 1em 0.5em; 
+    /* border-spacing: 1em 0.5em; */
+    transform: translateX(10px); 
+ 
    
   }
   .area{
     font-family: "RobotoR";
     font-size: large;
     font-weight: 100;
+    text-align:justify;
     opacity:0.6;
+    transform: translateX(10px); 
+  }
+  .roomdetails{
+    font-size:medium;
+    border-spacing: 1em 0.5em; 
+    transform: translateX(30px);
+    left:50px; 
+   
+  
+
   } 
   
   
@@ -231,13 +263,14 @@ input[type="number"]{
     gap:85px; 
    } */
    #areaA {
-    background-color:gray;
+    background-color:rgb(142, 139, 139);
     border:1px solid #ccc;
     border-radius:3px;
-    padding: 15px 15px 0px 15px; 
+    padding: 15px 30px 0px 65px; 
     margin:2px 20px;
     text-align: center;
-    width:200px;
+    width:332px;
+    margin-left: -1px; 
    
 
     }
@@ -250,6 +283,9 @@ input[type="number"]{
     /* margin: 2px 4px; */
     text-align: center;
     width:900px;
+ 
+  
+
   }  
 
   .hotel-search button{
@@ -311,22 +347,22 @@ input[type="number"]{
 
   }
   
+ 
   footer {
-    position: relative;
+    position: fixed;
     bottom:-10px;
     left:-10px;
     right:-10px;
     width: 100%;
     background-color: lightgray; 
-    padding:10px; 
+    padding:20px; 
     text-align: center; 
     height: 2%;
     /* margin-top: -10px;
     margin-bottom: -10px; */
     margin-right: -20px;
     clear: both;
-}
-
+  }
   
 
    fieldset {
@@ -340,10 +376,41 @@ input[type="number"]{
     height: 200px;
   }
 
-  body>header{
+  /* body>header{
     box-shadow: 0px 4px 1px 2px rgba(0,0,0,0.25);
+  } */
+
+  .dropdown {
+    position: relative;
+    display: inline;
+    float: right;
   }
+
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width:100px;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 5px 2px;
+    z-index: 1;
+    right:40px; 
+    top:90%;
+    left:10px;
+    transition:opacity 0.8s ease;
   
+    /* top: calc(100% + 10px); */
+   }
+  
+    
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  
+  }
    
 
 

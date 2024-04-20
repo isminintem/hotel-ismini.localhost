@@ -1,22 +1,22 @@
 $(document).ready(function() {
-    // Κώδικας για την εμφάνιση/απόκρυψη του dropdown
-    var dropdownTimer;
+    var dropdownTimer; // Ορίζουμε μια μεταβλητή για τον χρονοδιακόπτη
 
+    // Εμφανίζουμε το dropdown όταν το ποντίκι βρίσκεται εντός του "Προφίλ"
     $('#profile-link').mouseenter(function() {
-        clearTimeout(dropdownTimer);
+        clearTimeout(dropdownTimer); // Εξαφανίζουμε τον χρονοδιακόπτη αν υπάρχει
         $('.dropdown-content').slideDown();
     });
 
+    // Κρύβουμε το dropdown όταν ο χρήστης βγαίνει από το "Προφίλ" ή το dropdown
     $('#profile-link, .dropdown-content').mouseleave(function() {
+        // Χρησιμοποιούμε έναν χρονοδιακόπτη για να καθυστερήσουμε το κλείσιμο του dropdown
         dropdownTimer = setTimeout(function() {
             $('.dropdown-content').slideUp();
-        }, 800);
+        }, 800); // Καθορίζουμε την καθυστέρηση σε 500 milliseconds
     });
 
-    // Κώδικας για την αποσύνδεση χρήστη
+    // Επιτρέπουμε την επιλογή του "Logout" με click
     $('#logout-link').click(function(event) {
-        event.preventDefault(); // Αποτρέπουμε την προεπιλεγμένη συμπεριφορά του συνδέσμου
-        // Εδώ μπορείτε να προσθέσετε τον κώδικα που ανταποκρίνεται στο κλικ για να εκτελείται η αποσύνδεση του χρήστη
-        // Παράδειγμα: window.location.href = 'logout.php';
+        // Προσθέστε εδώ τον κώδικα που ανταποκρίνεται στο κλικ για να εκτελείται η αποσύνδεση του χρήστη
     });
 });
