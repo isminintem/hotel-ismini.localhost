@@ -68,17 +68,25 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
     </head>
     <body>
             <header>
-                <section class="access">
-                    <form action="homepage.html" method="get">
-                        <a class="list-menu"href="index.php"target><img src="../images/Home.png">Home</a>
-                    </form>
-                    <form action="profile.php"method="get">
-                        <a class="list-menu"href="profile.php"target><img src="../images/user.png">Profile</a>
-                    </form>  
-                </section>                             
-                <h2 class="headline">Hotels.com</h2>
-                <!-- <section class="each-hotel"> -->
-                    <hr class="hr-with-shadow">
+            <section class="access">
+                <div class="dropdown">
+                    <a class="list-menu" href="profile.php" id="profile-link" target><img src="../images/user.png">Profile</a>
+                    <div class="dropdown-content">
+                        <a class="list-menu" href="../actions/logout_action.php"id="logout-link" target>Logοut</a>
+                    </div>
+                </div>
+            </section>
+            <section class="access">
+                <form action="index.php"method="post">
+                    <a class="list-menu" href="index.php"target><img src="../images/Home.png">Home</a>
+                    
+                </form>
+                
+           </section> 
+
+            
+                <h3 class="logo">Hotels.com</h3>     
+                <hr class="hr-with-shadow">
             </header><br><br>
             <main>
                 <div class="grid-container1">
@@ -379,12 +387,12 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
                 <script src="../js/results.js"></script>
                 <script src="../js/jquery-3.7.1.js"></script>
-                <script src="../js/jquery-3.7.1.min.js"></script>
                 <script src="../js/jquery-ui-1.13.1.js"></script>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
                 <script src="../pages/room_Favorite.js"></script>    
-                <script src="../pages/room_review.js"></script>    
+                <script src="../pages/room_review.js"></script>
+                <script src="../js/dropdown-links.js"></script>     
             </main>
 
             

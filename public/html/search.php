@@ -206,19 +206,22 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
 
                 $(function(){
                     $("#datepicker-start").datepicker({
-                        dateFormat:"yy-mm-dd"
+                        dateFormat:"yy-mm-dd",
+                        minDate:0
                       });
                     });
                 $(function(){
                     $("#datepicker-end").datepicker({
-                        dateFormat:"yy-mm-dd"
+                        dateFormat:"yy-mm-dd",
+                        minDate:0
                      });
                     });          
             </script>
                 </aside>
-                <!-- <div class="vertical-line left"></div>  -->
+                <!-- <div class="vertical-line"></div> -->
 
                 <aside class="hotel-search box">
+             
                     <section class="hotel-list box" id="searchResults">
 
                         <div class="page-title">
@@ -234,15 +237,15 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
                         <div class="brand"><?php echo $availableRoom->getName() ?> </div> 
                             <div class="area"><?php echo $availableRoom->getCity()?>,<?php echo $availableRoom->getArea()?></div>
-                            <p><span class="roomdetails"><?php echo $availableRoom->getDescription_short()?></span></p>
+                            <p><span class="roomDetails"><?php echo $availableRoom->getDescription_short()?></span></p>
                             <form action="results.php?room_id=<?php echo $availableRoom->getRoom_id() ?>&check-in-date=<?php echo $selectedCheckinDate->format("Y-m-d") ?>&check-out-date=<?php echo $selectedCheckoutDate->format("Y-m-d") ?>"  method="post">
                                 <button onclick="btn btn-warning">Go to the room</button> 
                             </form>
                     </article> 
                     
                         <div id="grid-container">
-                            <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
-                            <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div id="areaA"><span class="price-label">Per Night:<?php echo $availableRoom->getPrice()?>€</span></div>
+                            <div id="areaB"><span class="guests-room">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             Type of Room:
                             <?php 
                                 foreach($roomTypes as $roomType) {
@@ -251,7 +254,8 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
                                         break;
                                     }       
                                 } ?>
-                        </div>  
+                            </span>
+                         </div>  
                       </div>
                
 
@@ -278,11 +282,11 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
     
      </div>
  
-     <!-- <footer class="bg-light fixed-bottom text-center">
+     <footer class="bg-light fixed-bottom text-center">
             <p class="rights">(c) Copyright 2024</p>
         </div>
 
-    </footer>  -->
+    </footer> 
  
    </body>
 

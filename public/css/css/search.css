@@ -188,10 +188,11 @@ input[type="number"]{
 }
 
 .hotel-search {
-  width:600px;
+  /* width:700px; */
   display:inline;
   float: inline-start;
-  padding:25px;}
+  padding:25px 2px;
+}
 
  
 
@@ -220,12 +221,11 @@ input[type="number"]{
     font-family:RobotoL;
 
   }
-  .brand{
+  /* .brand{
     font-family: "RobotoR";
     font-weight:200;
     font-size:x-large;
     text-align:justify;
-    /* border-spacing: 1em 0.5em; */
     transform: translateX(10px); 
  
    
@@ -238,39 +238,86 @@ input[type="number"]{
     opacity:0.6;
     transform: translateX(10px); 
   }
-  .roomdetails{
+  .roomDetails{
     font-size:medium;
     border-spacing: 1em 0.5em; 
     transform: translateX(30px);
-    left:50px; 
-   
+ 
   
+  }  */
 
-  } 
+  /* .brand, .area, .roomDetails {
+    font-family: "RobotoR";
+    text-align: justify;
+} */
+
+.brand {
+    font-weight: 200;
+    font-size: x-large;
+    transform: translateX(10px); /* Move 10px to the right */
+}
+
+.area {
+    font-size: large;
+    font-weight: 100;
+    opacity: 0.6;
+    transform: translateX(10px); /* Move 10px to the right */
+}
+
+#grid-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+#areaA {
+  background-color: rgb(142, 139, 139);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 15px 70px 0px 65px;
+  margin: 0px -25px 10px 0px; /* Adjusted margin */
+  text-align:justify;
+  width: 10%; /* Adjusted width */
+  position: relative;
+ 
+}
+.price-label {
+  text-align: center;
+  position: absolute; /* Added */
+  left:90px; /* Adjusted right distance */
+}
+
+#areaB {
+  background-color: gainsboro;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 15px 25px 0px 15px;
+  margin: 0px 0px 10px 60px; /* Adjusted margin */
+  text-align:justify;
+  width: 64%; /* Adjusted width */
+  position: relative;
+}
+
+
   
-  
-  #grid-container { 
+  /* #grid-container { 
     width:100%;
     display: flex;
-    padding-right:100%;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 20% 80%;
     
     
   }
-    /* display: flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    gap:85px; 
-   } */
+
    #areaA {
     background-color:rgb(142, 139, 139);
     border:1px solid #ccc;
     border-radius:3px;
-    padding: 15px 30px 0px 65px; 
-    margin:2px 20px;
+    padding: 15px 70px 0px 65px; 
+    margin: 0px 80px 10px -1px; 
     text-align: center;
-    width:332px;
-    margin-left: -1px; 
+    width:26.3%;
+
+
    
 
     }
@@ -278,15 +325,12 @@ input[type="number"]{
     background-color:gainsboro;
     border:1px solid #ccc;
     border-radius:3px;
-    padding: 15px 15px 0px 15px;
-    margin:2px 20px;
-    /* margin: 2px 4px; */
+    padding: 15px 25px 0px 15px;
+    margin: 0px 80px 10px -90px; 
     text-align: center;
-    width:900px;
+    width:80%;
  
-  
-
-  }  
+  }   */
 
   .hotel-search button{
     width:180px;
@@ -338,31 +382,33 @@ input[type="number"]{
   }
   article.hotel p{
     word-break: break-word;
-    width:950px;
+    width:920px;
     color:#333;
     text-align: center;
     font-size: 16px;
     line-height:20px;
     text-align: justify;
+    border-spacing: 1em 0.5em;
+    transform: translateX(10px);
 
   }
   
  
   footer {
-    position: fixed;
+    position: relative;
     bottom:-10px;
     left:-10px;
     right:-10px;
     width: 100%;
     background-color: lightgray; 
-    padding:20px; 
+    padding:10px; 
     text-align: center; 
     height: 2%;
     /* margin-top: -10px;
     margin-bottom: -10px; */
     margin-right: -20px;
     clear: both;
-  }
+}
   
 
    fieldset {
