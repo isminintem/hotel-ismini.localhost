@@ -23,7 +23,7 @@ if(!empty(UserService::getCurrentUser())) {
     </head>
     <body>
         <header>
-          <div class="logo"><h2>Hotels.com</h2> </div>
+          <h3 class="logo">Hotels.com</h3>
         </header>
         <main>
             <section id="form-group">
@@ -87,10 +87,11 @@ if(!empty(UserService::getCurrentUser())) {
             </section>
         <script src="../js/register.js"></script>
         </main>
-        <footer>
-            <p>(c) Copyright 2023</p>
+        <footer class="bg-light fixed-bottom text-center">
+            <p class="rights">(c) Copyright 2024</p>
+       
 
-        </footer>
+    </footer> 
     </body>
 </html>
 

@@ -192,6 +192,12 @@
   text-align: center;
   width: 30%; /* Adjusted width */
 }
+.totalCost{
+  text-align: center;
+  position: relative; 
+  right:35px; 
+  bottom:10px;
+}
 
 #areaB {
   background-color: gainsboro;
@@ -201,6 +207,19 @@
   margin: 0px 0px 10px -50px; /* Adjusted margin */
   text-align: center;
   width: 68%; /* Adjusted width */
+}
+.infoBookings{
+  text-align: center;
+  position: relative; 
+  right:25px; 
+  bottom:10px;
+
+}
+.vertical-line {
+  border-left: 3px solid rgb(142, 139, 139);;
+  height: 0.8em;
+  margin: 3px -1px 3px 2px;
+
 }
 
   .hotel-search button{

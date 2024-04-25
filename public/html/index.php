@@ -39,14 +39,6 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
     <body>
         <header> 
         <section class="access">
-                <form action="index.php"method="post">
-                    <a class="list-menu" href="index.php"target><img src="../images/Home.png">Home</a>
-                    
-                </form>
-                
-           </section> 
-
-            <section class="access">
                 <div class="dropdown">
                     <a class="list-menu" href="profile.php" id="profile-link" target><img src="../images/user.png">Profile</a>
                     <div class="dropdown-content">
@@ -54,6 +46,13 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
                     </div>
                 </div>
             </section>
+            <section class="access">
+                <form action="index.php"method="post">
+                    <a class="list-menu" href="index.php"target><img src="../images/Home.png">Home</a>
+                    
+                </form>
+                
+           </section> 
   
             
            

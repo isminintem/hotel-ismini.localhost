@@ -236,7 +236,7 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
                         <div class="brand"><?php echo $availableRoom->getName() ?> </div> 
-                            <div class="area"><?php echo $availableRoom->getCity()?>,<?php echo $availableRoom->getArea()?></div>
+                            <div class="area"><?php echo $availableRoom->getCity()?>,&nbsp;<?php echo $availableRoom->getArea()?></div>
                             <p><span class="roomDetails"><?php echo $availableRoom->getDescription_short()?></span></p>
                             <form action="results.php?room_id=<?php echo $availableRoom->getRoom_id() ?>&check-in-date=<?php echo $selectedCheckinDate->format("Y-m-d") ?>&check-out-date=<?php echo $selectedCheckoutDate->format("Y-m-d") ?>"  method="post">
                                 <button onclick="btn btn-warning">Go to the room</button> 
@@ -245,16 +245,17 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
                     
                         <div id="grid-container">
                             <div id="areaA"><span class="price-label">Per Night:<?php echo $availableRoom->getPrice()?>€</span></div>
-                            <div id="areaB"><span class="guests-room">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Type of Room:
-                            <?php 
-                                foreach($roomTypes as $roomType) {
-                                    if($roomType->getType_id()==$availableRoom->getType_id()) {
-                                        echo $roomType->getTitle();
-                                        break;
-                                    }       
-                                } ?>
-                            </span>
+                            <div id="areaB">&nbsp;&nbsp;&nbsp;
+                                <span class="guests-room">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                Type of Room:
+                                <?php 
+                                    foreach($roomTypes as $roomType) {
+                                        if($roomType->getType_id()==$availableRoom->getType_id()) {
+                                            echo $roomType->getTitle();
+                                            break;
+                                        }       
+                                    } ?>
+                                </span>
                          </div>  
                       </div>
                
@@ -284,7 +285,7 @@ $roomTypes = $roomTypeDBA->getAllRoomTypes();
  
      <footer class="bg-light fixed-bottom text-center">
             <p class="rights">(c) Copyright 2024</p>
-        </div>
+       
 
     </footer> 
  

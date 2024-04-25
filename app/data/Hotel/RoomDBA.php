@@ -6,13 +6,22 @@ use PDO;
 use DateTime;
 use ArrayObject;
 use \model\Hotel\Room;
+use Services\Utils\Configuration;
 
 class RoomDBA {
     private $pdo;
     public function __construct(){
-        $this->pdo=new PDO('mysql:host=127.0.0.1;dbname=hotel;charset=UTF8','root', 'Filaki19!!!', [
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
-        ]);
+
+        $config = Configuration::getInstance();
+
+        $this->pdo=new PDO(sprintf('mysql:host=%s;dbname=%s;charset=UTF8', $config->getDataBaseHost(), $config->getDataBaseName()), 
+            $config->getDataBaseUser(), 
+            $config->getDataBasePassword(), 
+            [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"]);
+
+        //$this->pdo=new PDO('mysql:host=127.0.0.1;dbname=hotel;charset=UTF8','root', 'Filaki19!!!', [
+        //    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
+        //]);
     }
 
     protected function getPdo(){

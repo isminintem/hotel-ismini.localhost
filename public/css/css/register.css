@@ -1,4 +1,10 @@
 
+.logo{
+  font-size:28px;
+  display: inline;
+}
+
+
 .entrance button {
   background-color: rgb(53, 53, 179);
   border: none;

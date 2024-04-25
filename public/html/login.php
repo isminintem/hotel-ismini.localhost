@@ -36,7 +36,7 @@ if(!empty(UserService::getCurrentUser())) {
     </head>
     <body>
         <header>
-          <div class="logo"><h2>Hotels.com</h2> </div>    
+        <h3 class="logo">Hotels.com</h3>
         </header>
   <main>
     <p id="demo"></p>
@@ -73,9 +73,11 @@ if(!empty(UserService::getCurrentUser())) {
   </main>
 
     
-  <footer>
-    <p>(c) Copyright 2023</p>
-  </footer>
+  <footer class="bg-light fixed-bottom text-center">
+            <p class="rights">(c) Copyright 2024</p>
+       
+
+    </footer> 
 
 
   </body>

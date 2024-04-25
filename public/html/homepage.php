@@ -8,6 +8,13 @@ require_once __DIR__.'/../../boot/boot.php';
 //     header("Location: /public/html/index.php");
 //   }
 
+//use Services\Utils\Configuration;
+
+//$config = Configuration::getInstance();
+//var_dump($config->getDataBasePassword());
+
+//die;
+
 ?>
 
 
@@ -38,20 +45,27 @@ require_once __DIR__.'/../../boot/boot.php';
                 </form>          
             </section>
             <h3 class="headline">Hotels.com</h3>
+            <div class="quote-container">
+                <h3 class="quote">To Travel is To Live.&nbsp;&nbsp;Find Now The Ideal Hotel For You!!!</h3>
+           </div>
             <section class="hero">
                 <style> main {
-                background: #fff;
-                color: #000;
-                background-image: url("../images/background img.jpg");
-                background-repeat: no-repeat;
-                /* background-attachment:relative; */
-                background-position: top;
-                background-size: cover; 
-                /* padding:300px; */
-                padding:170px;
-                margin-left:-8px;
-                margin-top:0;
-                }
+            background: #fff;
+            color: #000;
+            background-image: url("../images/background img.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            position: fixed;
+            width: 70%;
+            height: 495px;
+            left: 50%;
+            right:50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
+        }
+                
                 </style>
             </section>
              
@@ -59,9 +73,7 @@ require_once __DIR__.'/../../boot/boot.php';
         </header>
         <main>
             
-            <div class="quote-container">
-                <h3 class="quote">To Travel is To Live.&nbsp;&nbsp;Find Now The Ideal Hotel For You!!!</h3>
-           </div>
+           
             
           
         </main>

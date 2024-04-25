@@ -165,15 +165,15 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
         <article class="hotel">
             <img src=../images/rooms/<?php echo $bookingRoom->getPhoto_url()?>>
             <div class="brand"><?php echo $bookingRoom->getName()?></div>
-            <div class="area"><?php echo $bookingRoom->getCity()?><?php echo $bookingRoom->getArea()?></div>
+            <div class="area"><?php echo $bookingRoom->getCity()?>,&nbsp;<?php echo $bookingRoom->getArea()?></div>
             <p><span class="roomdetails"><?php echo $bookingRoom->getDescription_short()?></span></p>
         
             <form action="results.html"method="post">
                 <button type="submit" class="btn-room">Go to the Room Page</button><br><br><br> 
             </form>
             <div id="grid-container">
-                <div id="areaA">Total Cost:<?php echo $bookingRoom->getTotal_Price()?>€</div>
-                <div id="areaB">Check-in-Date:<?php echo $bookingRoom->getCheck_In_Date()?> Check-out-Date:<?php echo $bookingRoom->getCheck_Out_Date()?> Type of Room:<?php echo $bookingRoom->getTitle()?></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div id="areaA"><span class="totalCost">Total Cost:<?php echo $bookingRoom->getTotal_Price()?>€</span></div>
+                <div id="areaB"><span class="infoBookings">Check-in-Date:<?php echo $bookingRoom->getCheck_In_Date()?><span class="vertical-line"> Check-out-Date:<?php echo $bookingRoom->getCheck_Out_Date()?></span><span class="vertical-line"> Type of Room:<?php echo $bookingRoom->getTitle()?></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
             </div>
                         

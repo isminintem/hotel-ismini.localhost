@@ -1,6 +1,6 @@
 .logo{
-  font-size: 18px;
-  text-decoration: solid;
+  font-size:28px;
+  display: inline;
 }
 .headline{
   font-size:18px;
@@ -21,7 +21,7 @@
   border-width: 0.2rem;  
 }
 .form-group1 input{
-  width:250px;
+  width:230px;
 }
 .form-check{
   text-align: center;
@@ -99,6 +99,8 @@
   color: red;
  
 }
+
+
 footer {
   position: fixed;
   bottom: 0;
