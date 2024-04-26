@@ -18,10 +18,6 @@ class RoomDBA {
             $config->getDataBaseUser(), 
             $config->getDataBasePassword(), 
             [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"]);
-
-        //$this->pdo=new PDO('mysql:host=127.0.0.1;dbname=hotel;charset=UTF8','root', 'Filaki19!!!', [
-        //    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
-        //]);
     }
 
     protected function getPdo(){

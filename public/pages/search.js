@@ -11,7 +11,7 @@
 
         //Ajax Request
         $.ajax(
-           'http://hotel-ismini.localhost/public/ajax/search_results.php',
+           '../ajax/search_results.php',
            {
                 type:"GET",
                 dataType:"html",
@@ -22,7 +22,7 @@
             //append results container
             $('#searchResults').append(result);
            // Push url State
-           history.pushState({},'','http://hotel-ismini.localhost/public/html/search.php?'+formData);
+           history.pushState({},'','../html/search.php?'+formData);
             
            });    
  

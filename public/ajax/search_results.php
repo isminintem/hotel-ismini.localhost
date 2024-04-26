@@ -47,7 +47,7 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
 ?>
 
 
-        <aside class="hotel-search box">
+    <aside class="hotel-search box">
                     <section class="hotel-list box" id="searchResults">
 
                         <div class="page-title">
@@ -55,13 +55,8 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                        </div>   
                 <?php 
                     foreach($availableRooms as $availableRoom) {
-                   
                 ?>
-                 <!-- <?php 
-                    foreach($bookingsRooms as $bookingRoom)
-                    {
-                        
-                ?>   -->
+                 
                 
                     <article class="hotel">
                         <img src=../images/rooms/<?php echo $availableRoom->getPhoto_url()?>>
@@ -73,16 +68,23 @@ $availableRooms = $roomDBA->getAvailableRooms($selectedRoomType, $selectedCity, 
                             </form>
                     </article> 
                     
-                        <div id="grid-container">
-                            <div id="areaA">Per Night:<?php echo $availableRoom->getPrice()?>€</div>
-                            <div id="areaB">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            Type of Room:<?php echo $bookingRoom->getTitle()?></div>  
+                    <div id="grid-container">
+                            <div id="areaA"><span class="price-label">Per Night:<?php echo $availableRoom->getPrice()?>€</span></div>
+                            <div id="areaB">&nbsp;&nbsp;&nbsp;
+                                <span class="guests-room">Count of Guests:<?php echo $availableRoom->getCount_of_guests()?>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                Type of Room:
+                                <?php 
+                                    foreach($roomTypes as $roomType) {
+                                        if($roomType->getType_id()==$availableRoom->getType_id()) {
+                                            echo $roomType->getTitle();
+                                            break;
+                                        }       
+                                    } ?>
+                                </span>
+                         </div>  
                       </div>
                
-<!--                    
-                <?php
-                    }
-                ?> -->
+                
                 
                          
                 <?php

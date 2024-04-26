@@ -1,4 +1,4 @@
-document.getElementById("myForm").addEventListener("submit", function(event) {
+document.addEventListener("submit", function(event) {
   const selectedCity = document.getElementById("location").value;
   const selectedRoom = document.getElementById("room").value;
   const selectedCheckInDate = document.getElementById("datepicker-start").value;
@@ -40,7 +40,7 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
 });
 
 // Add event listeners to datepicker fields for validation
-document.getElementById("datepicker-start").addEventListener("change", function() {
+document.addEventListener("change", function() {
   const selectedCheckInDate = document.getElementById("datepicker-start").value;
   const checkInDate = new Date(selectedCheckInDate);
   const currentDate = new Date();
@@ -51,7 +51,7 @@ document.getElementById("datepicker-start").addEventListener("change", function(
   }
 });
 
-document.getElementById("datepicker-end").addEventListener("change", function() {
+document.addEventListener("change", function() {
   const selectedCheckOutDate = document.getElementById("datepicker-end").value;
   const checkOutDate = new Date(selectedCheckOutDate);
   const currentDate = new Date();

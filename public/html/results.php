@@ -223,7 +223,7 @@ $favorite=$favoriteDBA->isFavorite($selectedRoomID,UserService::getCurrentUser()
                                 <input type="hidden" name="room_id"value="<?php echo $selectedRoomID;?>">
                                 <input type="hidden" name="check_in_date"value="<?php echo $selectedCheckinDate->format(DateTime::ATOM);?>">
                                 <input type="hidden" name="check_out_date"value="<?php echo $selectedCheckoutDate->format(DateTime::ATOM);?>">
-                                <button class="btn btn-brick"type="submit">Book Now</button>
+                                <button class="btn-booking"type="submit">Book Now</button>
                             </form>
                 <?php
                             }else{

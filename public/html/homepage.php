@@ -50,15 +50,16 @@ require_once __DIR__.'/../../boot/boot.php';
            </div>
             <section class="hero">
                 <style> main {
-            background: #fff;
-            color: #000;
+            /* background: #fff;
+            color: #000; */
             background-image: url("../images/background img.jpg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            background-color:black;
 
             position: fixed;
-            width: 70%;
+            width:100%;
             height: 495px;
             left: 50%;
             right:50%;

@@ -8,6 +8,7 @@ require_once __DIR__.'/../../boot/boot.php';
 use \Services\UserService;
 use \Services\Utils\JWTUtils;
 use \data\Hotel\BookingDBA;
+use DateTime;
 
 
 
@@ -40,15 +41,21 @@ if(empty($roomId)){
 $bookingDBA=new BookingDBA();
 $checkInDate=$_REQUEST['check_in_date'];
 $checkOutDate=$_REQUEST['check_out_date'];
-$bookingDBA->addBooking($roomId,$userId,$checkInDate,$checkOutDate);
+$result = $bookingDBA->addBooking($roomId,$userId,$checkInDate,$checkOutDate);
 
 
 
 
+if($result==0) {
+    //Return to Room Page
+    header('Location: /public/html/profile.php');
+} else {
+    //return to the booking page
+    $checkInDatetime = new Datetime($checkInDate);
+    $checkOutDateTime = new Datetime($checkOutDate);
 
-
-//Return to Room Page
-
+    header('Location: /public/html/results.php?room_id='.$roomId."&check-in-date=".$checkInDatetime->format("Y-m-d")."&check-out-date=".$checkOutDateTime->format("Y-m-d"));
+}
 
 
 

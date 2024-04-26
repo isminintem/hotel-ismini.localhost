@@ -143,10 +143,7 @@ select{
 .slider:hover {
     opacity: 1;
 }
-/* .sliderValue,.sliderValue1{
-  width:92px;
-  padding: 5px;
-} */
+
 .slider-label{
   font-size:14px;
   font-style:normal;  
@@ -206,11 +203,7 @@ input[type="number"]{
   font-size: 16px;
   color:#ff5500;
   margin-left: 3px;
-  /* box-sizing: border-box;
-  box-shadow: 0 2px 4px 4px rgba(0,0,0,.11);
-  border-radius:5px;
-  padding:10px 0 55px 15px;
-  margin: 4px 2px; */
+
 }
 
   .page-title{
@@ -224,41 +217,7 @@ input[type="number"]{
     font-family:RobotoL;
 
   }
-  /* .brand{
-    font-family: "RobotoR";
-    font-weight:200;
-    font-size:x-large;
-    text-align:justify;
-    transform: translateX(10px); 
- 
-   
-  }
-  .area{
-    font-family: "RobotoR";
-    font-size: large;
-    font-weight: 100;
-    text-align:justify;
-    opacity:0.6;
-    transform: translateX(10px); 
-  }
-  .roomDetails{
-    font-size:medium;
-    border-spacing: 1em 0.5em; 
-    transform: translateX(30px);
- 
-  
-  }  */
 
-  /* .brand, .area, .roomDetails {
-    font-family: "RobotoR";
-    text-align: justify;
-} */
-
-.brand {
-    font-weight: 200;
-    font-size: x-large;
-    transform: translateX(10px); /* Move 10px to the right */
-}
 
 .area {
     font-size: large;
@@ -320,37 +279,7 @@ input[type="number"]{
 
 
   
-  /* #grid-container { 
-    width:100%;
-    display: flex;
-    grid-template-columns: 20% 80%;
-    
-    
-  }
 
-   #areaA {
-    background-color:rgb(142, 139, 139);
-    border:1px solid #ccc;
-    border-radius:3px;
-    padding: 15px 70px 0px 65px; 
-    margin: 0px 80px 10px -1px; 
-    text-align: center;
-    width:26.3%;
-
-
-   
-
-    }
-   #areaB {
-    background-color:gainsboro;
-    border:1px solid #ccc;
-    border-radius:3px;
-    padding: 15px 25px 0px 15px;
-    margin: 0px 80px 10px -90px; 
-    text-align: center;
-    width:80%;
- 
-  }   */
 
   .hotel-search button{
     width:180px;
@@ -416,7 +345,7 @@ input[type="number"]{
  
   footer {
     position: relative;
-    bottom:-10px;
+    top:90px;
     left:-10px;
     right:-10px;
     width: 100%;
@@ -424,8 +353,6 @@ input[type="number"]{
     padding:10px; 
     text-align: center; 
     height: 2%;
-    /* margin-top: -10px;
-    margin-bottom: -10px; */
     margin-right: -20px;
     clear: both;
 }

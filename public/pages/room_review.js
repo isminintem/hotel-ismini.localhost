@@ -13,7 +13,7 @@
 
         //Ajax Request
         $.ajax({
-                url:'http://hotel-ismini.localhost/public/ajax/room_review.php',
+                url:'../ajax/room_review.php',
                 type:"POST",
                 dataType:"html",
                 data: formData

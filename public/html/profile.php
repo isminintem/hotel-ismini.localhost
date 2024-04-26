@@ -146,6 +146,7 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
             ?>
            
         </div>
+   
             
     
     <aside class="hotel-search box">
@@ -167,8 +168,8 @@ $userReviews=$reviewDBA->getReviewByUserID($userid);
             <div class="brand"><?php echo $bookingRoom->getName()?></div>
             <div class="area"><?php echo $bookingRoom->getCity()?>,&nbsp;<?php echo $bookingRoom->getArea()?></div>
             <p><span class="roomdetails"><?php echo $bookingRoom->getDescription_short()?></span></p>
-        
-            <form action="results.html"method="post">
+            
+            <form action="results.php?room_id=<?php echo $bookingRoom->getRoom_id() ?>"  method="post">
                 <button type="submit" class="btn-room">Go to the Room Page</button><br><br><br> 
             </form>
             <div id="grid-container">

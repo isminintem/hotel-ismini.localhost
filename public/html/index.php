@@ -30,9 +30,9 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
         <link rel="stylesheet" type="text/css" href="../css/css/styles.css"/>
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> 
         <script src="../js/dropdown-links.js"></script> 
-        <!-- <script src="../js/index.js"></script>  -->
+        <script src="../js/index.js"></script>
 
         
     </head>
@@ -77,69 +77,70 @@ $roomTypes= $roomTypeDBA->getAllRoomTypes();
         </header>
         <main>
             
-            <form name="SearchForm" id="myForm"action="search.php" method="get" >
-            <section id="form-group">
+            <form name="SearchForm" id="myForm" action="search.php" method="get" >
+                <section id="form-group">
+                    
+                    <div class="search-rooms" >
+                        <select name="city"class="location"id="location" data-placeholder="City">
+                            <option value="">Select city</option>
+                            <?php
+                                foreach($cities as $city) {
+                            ?>        
+                                <option value="<?php echo $city['city'] ?>"><?php echo $city['city'] ?></option>
+                            <?php
+                                }
+                            ?>
+                        </select>       
+                        <select name="roomType"class="rooms"id="room" data-placeholder="RoomType">
+                            <option value="">Room Type</option>
+                            <?php
+                                foreach($roomTypes as $roomType) {
+                            ?>
+                                <option value="<?php echo $roomType->getType_id()?>"><?php echo $roomType->getTitle()?></option>
+                            <?php            
+                                }
+                            ?>       
+                        </select>
                 
-                <div class="search-rooms" >
-                    <select name="city"class="location"id="location" data-placeholder="City">
-                        <option value="">Select city</option>
-                        <?php
-                            foreach($cities as $city) {
-                        ?>        
-                            <option value="<?php echo $city['city'] ?>"><?php echo $city['city'] ?></option>
-                        <?php
-                            }
-                        ?>
-                    </select>       
-                    <select name="roomType"class="rooms"id="room" data-placeholder="RoomType">
-                        <option value="">Room Type</option>
-                        <?php
-                            foreach($roomTypes as $roomType) {
-                        ?>
-                            <option value="<?php echo $roomType->getType_id()?>"><?php echo $roomType->getTitle()?></option>
-                        <?php            
-                            }
-                        ?>       
-                    </select>
-              
-                      
-                                   
-                     
-                    <div class="duration">
-                        <input type="text" class="form-control_landing"  id="datepicker-start"autocomplete="off" value=""  name="check-in-date"  placeholder="Check-in-Date">
-                        <input type="text" class="form-control_landing"  id="datepicker-end" autocomplete="off"  value=""  name="check-out-date" placeholder="Check-out-Date"><br><br>
-                       
-                            <p type="text" id="check-in-date error"class="text-danger"></p>
-                            <p type="text"id="check-in-date error"class="text-danger"></p>  
-                    </div>
-                  
-                        <div class="btn-search">
-                            <button class="search"id="btn-sub">Search</button>
+                        
+                                    
+                        
+                        <div class="duration">
+                            <input type="text" class="form-control_landing"  id="datepicker-start"autocomplete="off" value=""  name="check-in-date"  placeholder="Check-in-Date">
+                            <input type="text" class="form-control_landing"  id="datepicker-end" autocomplete="off"  value=""  name="check-out-date" placeholder="Check-out-Date"><br><br>
+                        
+                                <p type="text" id="check-in-date error"class="text-danger"></p>
+                                <p type="text"id="check-in-date error"class="text-danger"></p>  
+                        </div>
+                    
+                            <div class="btn-search">
+                                <button class="search"id="btn-sub">Search</button>
+                            </div>
+                            
+                    </form>
                         </div>
                         
-                </form>
                     </div>
-                     
-                </div>
-                <script type="text/javascript">
-                   $(document).ready(function() {
-                        // Initialize the datepickers
-                        $("#datepicker-start").datepicker({
-                            dateFormat: "yy-mm-dd",
-                            minDate:0
-                        });
+                    <script type="text/javascript">
+                    $(document).ready(function() {
+                            // Initialize the datepickers
+                            $("#datepicker-start").datepicker({
+                                dateFormat: "yy-mm-dd",
+                                minDate:0
+                            });
 
-                        $("#datepicker-end").datepicker({
-                            dateFormat: "yy-mm-dd",
-                            minDate:0
-                          
+                            $("#datepicker-end").datepicker({
+                                dateFormat: "yy-mm-dd",
+                                minDate:0
+                            
+                            });
                         });
-                    });
+                        
+                    </script>
                     
-                </script>
-                
-                
-            </section>
+                    
+                </section>
+            </form>
             
          
             

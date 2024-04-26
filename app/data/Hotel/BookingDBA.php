@@ -34,25 +34,7 @@ class BookingDBA {
     }
 
 
-    function getBookingsByRoomIDByDate($room_id,$checkInDate,$checkOutDate){
-        $checkinDateString = $checkInDate->format(DateTime::ATOM);
-        $checkoutDateString = $checkOutDate->format(DateTime::ATOM);
-
-        $result= new ArrayObject();
-        $statement=$this->getPdo()->prepare("SELECT * 
-        FROM `booking` 
-        WHERE `room_id` = :room_id AND ((`check_in_date`  BETWEEN :selected_check_in_date AND  :selected_check_out_date ) OR (`check_out_date` BETWEEN :selected_check_in_date AND :selected_check_out_date))");
-        $statement->bindParam(':selected_check_in_date', $checkinDateString, PDO::PARAM_STR);
-        $statement->bindParam(':selected_check_out_date', $checkoutDateString, PDO::PARAM_STR);
-        $statement->bindParam(':room_id', $room_id, PDO::PARAM_INT);
-        $statement->execute();
-
-        while($row=$statement->fetch(PDO::FETCH_ASSOC)){
-            $booking=Booking::createBooking($row);
-            $result->append($booking);
-        }
-        return $result;
-    }
+    
 
     
 
@@ -86,9 +68,61 @@ class BookingDBA {
 
     }
 
+    function getBookingsByRoomIDByDate($room_id,$checkInDate,$checkOutDate){
+        $checkinDateString = $checkInDate->format(DateTime::ATOM);
+        $checkoutDateString = $checkOutDate->format(DateTime::ATOM);
+
+        $result= new ArrayObject();
+        $statement=$this->getPdo()->prepare("SELECT * 
+        FROM `booking` 
+        WHERE `room_id` = :room_id AND ((`check_in_date`  BETWEEN :selected_check_in_date AND  :selected_check_out_date ) OR (`check_out_date` BETWEEN :selected_check_in_date AND :selected_check_out_date))");
+        $statement->bindParam(':selected_check_in_date', $checkinDateString, PDO::PARAM_STR);
+        $statement->bindParam(':selected_check_out_date', $checkoutDateString, PDO::PARAM_STR);
+        $statement->bindParam(':room_id', $room_id, PDO::PARAM_INT);
+        $statement->execute();
+
+        while($row=$statement->fetch(PDO::FETCH_ASSOC)){
+            $booking=Booking::createBooking($row);
+            $result->append($booking);
+        }
+        return $result;
+    }
+
+    /*
+    If it succeds and a booking is added, then it returns 0
+    if it fails, a booking is already available, then it returns -1
+    */
     function addBooking($room_id, $user_id, $checkInDate, $checkOutDate){
+        //get only the date from the datetime (remove the time)
+        $selectedCheckinDate = new DateTime($checkInDate);
+        $selectedCheckOutDate = new DateTime($checkOutDate);
+        $selectedCheckinDateStr =  $selectedCheckinDate->format("Y-m-d");
+        $selectedCheckOutDateStr =  $selectedCheckOutDate->format("Y-m-d");
+
         //start transaction
         $this->getPdo()->beginTransaction();
+
+        //check if booking already exists for that roomid between these dates
+        $result= new ArrayObject();
+        $statement=$this->getPdo()->prepare("SELECT * 
+        FROM `booking` 
+        WHERE `room_id` = :room_id AND ((`check_in_date`  BETWEEN :selected_check_in_date AND  :selected_check_out_date ) OR (`check_out_date` BETWEEN :selected_check_in_date AND :selected_check_out_date))");
+        $statement->bindParam(':selected_check_in_date', $selectedCheckinDateStr, PDO::PARAM_STR);
+        $statement->bindParam(':selected_check_out_date', $selectedCheckOutDateStr, PDO::PARAM_STR);
+        $statement->bindParam(':room_id', $room_id, PDO::PARAM_INT);
+        $statement->execute();
+        while($row=$statement->fetch(PDO::FETCH_ASSOC)){
+            $booking=Booking::createBooking($row);
+            $result->append($booking);
+        }
+
+        //if they are already bookings for that room at that dates, then rollback
+        if($result->count()>0) {
+            $this->getPdo()->rollback();
+            return -1; //return negative value if fails
+        }
+
+
         //Get Room Info
         $statement=$this->getPdo()->prepare("SELECT * FROM room WHERE room_id = :room_id");
         $statement->bindParam(':room_id', $room_id, PDO::PARAM_INT);
@@ -97,8 +131,7 @@ class BookingDBA {
             $price=$row['price'];
         }
         
-        $selectedCheckinDate = new DateTime($checkInDate);
-        $selectedCheckOutDate = new DateTime($checkOutDate);
+        
 
         //Calculate Final Price 
         $daysDiff=$selectedCheckOutDate->diff( $selectedCheckinDate)->days + 1;
@@ -118,6 +151,9 @@ class BookingDBA {
 
         //Commit
         $this->getPdo()->commit();
+
+        //return 0 if succeeds
+        return 0;
 
     }
 
