@@ -2,8 +2,8 @@
     "database":{
         "host":"127.0.0.1",
         "dbname":"hotel",
-        "username":"root",
-        "password":"Filaki19!!!"
+        "username":"hotel",
+        "password":"password"
     }
 }
 
